@@ -34,11 +34,7 @@ module.exports = {
       ],
       copyright: [
         {
-          text: "Privacy Policy",
-          link: "https://policies.google.com/privacy?hl=en-US"
-        },
-        {
-          text: "MIT Licensed | Copyright © 2019-present Billyyyyy3320",
+          text: "Billy Chin © 2019",
           link: ""
         }
       ]

@@ -9,12 +9,13 @@
   },
   "repository": "/simple-blog",
   "scripts": {
-    "dev": "vuepress dev blog",
+    "dev": "vuepress dev blog --open --no-clear-screen",
     "build": "vuepress build blog"
   },
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.0.0",
-    "@vuepress/theme-blog": "^1.0.0"
+    "@vuepress/plugin-google-analytics": "^1.0.0-rc.1",
+    "@vuepress/theme-blog": "^1.0.0",
+    "vuepress": "^1.0.0"
   }
 }

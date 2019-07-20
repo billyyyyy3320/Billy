@@ -2,6 +2,14 @@ module.exports = {
   title: "Billy Chin",
   description: "This is a blog example built by VuePress",
   theme: "@vuepress/theme-blog", // OR shortcut: @vuepress/blog
+  plugins: [
+    [
+      "@vuepress/google-analytics",
+      {
+        ga: process.env.GA // UA-00000000-0
+      }
+    ]
+  ],
   themeConfig: {
     modifyBlogPluginOptions(blogPlugnOptions) {
       const writingDirectoryClassifier = [

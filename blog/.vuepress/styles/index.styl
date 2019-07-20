@@ -1,0 +1,44 @@
+/**
+ * Custom Styles here.
+ *
+ * ref：https://v1.vuepress.vuejs.org/config/#index-styl
+ */
+
+#app
+  background-color: #232327
+
+// header
+#header 
+  background-color: #000000
+
+.header-wrapper 
+  .title a
+    color: $textColor
+  .header-right-wrap .nav .nav-item a
+    color: $textColor
+    &.router-link-active
+      color: $accentColor
+    &:hover
+      border-bottom: 1px solid $accentColor
+      color: $accentColor
+
+.search-box input 
+  color: #000000;
+
+// content
+.ui-post-title a
+  color: $textColor !important
+  &:hover
+    color: $accentColor !important
+.ui-post-summary, .ui-post-date
+  color: darken($textColor,20%) !important
+
+.vuepress-blog-theme-content
+  background-color: transparent !important
+  color:inherit !important
+
+.vuepress-toc .vuepress-toc-item
+  a
+    color: $textColor !important
+  &.active a
+    color: $accentColor !important

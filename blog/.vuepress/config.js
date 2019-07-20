@@ -21,10 +21,6 @@ module.exports = {
         link: "/"
       },
       {
-        text: "Tags",
-        link: "/tag/"
-      },
-      {
         text: "About",
         link: "/about/"
       }

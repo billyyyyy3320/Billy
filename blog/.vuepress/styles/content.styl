@@ -1,0 +1,21 @@
+.ui-post-title a
+  color: $textColor !important
+  &:hover
+    color: $accentColor !important
+    
+.ui-post-summary, .ui-post-date
+  color: darken($textColor,20%) !important
+
+.vuepress-blog-theme-content
+  background-color: transparent !important
+  color:inherit !important
+
+.vuepress-toc .vuepress-toc-item
+  a
+    color: $textColor !important
+  &.active a
+      color: $accentColor !important
+
+@media (min-width: 959px)
+  .vuepress-blog-theme-content 
+    box-shadow: 0 10px 20px rgba(255,255,255,0.05), 0 6px 6px rgba(255,255,255,0.07) !important

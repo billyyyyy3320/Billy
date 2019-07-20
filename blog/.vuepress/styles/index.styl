@@ -1,12 +1,8 @@
-/**
- * Custom Styles here.
- *
- * ref：https://v1.vuepress.vuejs.org/config/#index-styl
- */
 @require './mobile.styl'
+@require './content.styl'
 
 #app
-  background-color: #232327
+  background-color: #282A2B
 
 // header
 #header
@@ -27,19 +23,7 @@
   color: #000000;
 
 // content
-.ui-post-title a
-  color: $textColor !important
-  &:hover
-    color: $accentColor !important
-.ui-post-summary, .ui-post-date
-  color: darken($textColor,20%) !important
+.vuepress-blog-theme-content code
+  background-color: rgba(255,255,255,0.15)
 
-.vuepress-blog-theme-content
-  background-color: transparent !important
-  color:inherit !important
 
-.vuepress-toc .vuepress-toc-item
-  a
-    color: $textColor !important
-  &.active a
-    color: $accentColor !important

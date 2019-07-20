@@ -4,15 +4,21 @@ module.exports = {
   theme: "@vuepress/theme-blog", // OR shortcut: @vuepress/blog
   themeConfig: {
     modifyBlogPluginOptions(blogPlugnOptions) {
-      const writingDirectoryClassifier = {
-        id: "about",
-        dirname: "_about",
-        path: "/about/",
-        layout: "IndexAbout",
-        itemLayout: "Writing"
-      };
+      const writingDirectoryClassifier = [
+        {
+          id: "about",
+          dirname: "_about",
+          path: "/about/",
+          layout: "IndexAbout",
+          itemLayout: "Writing"
+        }
+      ];
 
-      blogPlugnOptions.directories.push(writingDirectoryClassifier);
+      blogPlugnOptions.directories = [
+        ...blogPlugnOptions.directories,
+        ...writingDirectoryClassifier
+      ];
+
       return blogPlugnOptions;
     },
     nav: [
@@ -23,6 +29,10 @@ module.exports = {
       {
         text: "About",
         link: "/about/"
+      },
+      {
+        text: "Resume",
+        link: "https://billychin.netlify.com/resume.pdf"
       }
     ],
     footer: {

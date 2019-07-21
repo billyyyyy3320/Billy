@@ -1,13 +1,6 @@
-# simple-blog
+# My Personal Website
 
-> 
+[Visit it!!!](https://billychin.netlify.com/)
 
-## Development
-
-```bash
-yarn dev
-yarn build
-```
-
-For more details, please head VuePress's [documentation](https://v1.vuepress.vuejs.org/).
+Powerd by Vuepress.
 

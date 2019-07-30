@@ -48,6 +48,10 @@ module.exports = {
         {
           type: "github",
           link: "https://github.com/newsbielt703"
+        },
+        {
+          type: "instagram",
+          link: "https://www.instagram.com/billyyyyy3320/"
         }
       ],
       copyright: [

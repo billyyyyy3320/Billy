@@ -1,13 +1,12 @@
 {
-  "name": "simple-blog",
-  "version": "0.0.1",
+  "name": "billy-chin",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "authors": {
     "name": "Billyyyyy3320",
     "email": "newsbielt703@gmail.com"
   },
-  "repository": "/simple-blog",
   "scripts": {
     "dev": "vuepress dev blog --open --no-clear-screen",
     "build": "vuepress build blog"

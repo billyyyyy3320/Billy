@@ -1,6 +1,6 @@
 module.exports = {
   title: "Billy Chin",
-  description: "This is a blog example built by VuePress",
+  description: "Billy Chin's personal website",
   theme: "@vuepress/theme-blog", // OR shortcut: @vuepress/blog
   plugins: [
     [

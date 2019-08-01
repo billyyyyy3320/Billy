@@ -7,6 +7,8 @@ tag:
 
 # Json-server with multiple files
 
+[You can find a template here.](https://github.com/newsbielt703/json-server-mulitple-files-sample)
+
 First of all, I'm not a native speaker of English.
 
 ## Intro
@@ -92,7 +94,7 @@ module.exports = [{ id: 1, title: "json-server", author: "typicode" }];
 
 It's annoyed that I have to import the file whenever I create one.
 
-Use [glob](https://github.com/isaacs/node-glob) to get file names：
+Leverage [glob](https://github.com/isaacs/node-glob) to get file names：
 
 ```JavaScript
 // db.js
@@ -360,4 +362,18 @@ module.exports = function(req, res, next) {
 }
 ```
 
-[You can find a template here.](https://github.com/newsbielt703/json-server-mulitple-files-sample)
+### Run App and mock server at the same time in one terminal
+
+It's kind of annoyed to open two terminal to run each server.
+Actually, I can just run `yarn mock & yarn start`. But how do I know where logs come from ?<br>
+I leverage [Concurrently](https://github.com/kimmobrunfeldt/concurrently) to solve this problem:
+
+```
+yarn add -D concurrently
+```
+
+```json
+"scripts": {
+  "dev": "concurrently \"yarn:start\" \"yarn:mock\"",
+}
+```

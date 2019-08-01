@@ -5,15 +5,13 @@ tag:
   - JavaScript
 ---
 
-# Json-server with multiple files
+# json-server 多檔案結構
 
 ## 前言
 
-附上[範例](https://github.com/newsbielt703/json-server-mulitple-files-sample)
+附上 [repo](https://github.com/newsbielt703/json-server-mulitple-files-sample)
 
-先簡單介紹 json-server
-
-以下來自 Json-server 文件的 [Getting started](https://github.com/typicode/json-server#getting-started)
+先簡單看過 json-server 提供的 [Getting started](https://github.com/typicode/json-server#getting-started)
 
 Create a `db.json` file with some data
 
@@ -361,5 +359,21 @@ module.exports = function(req, res, next) {
   // ...
   "middlewares": ["./mock/middlewares/_postAsGet.js"]
   // ...
+}
+```
+
+### 同時運行 App 與 mock server 在一個 terminal
+
+你可能覺得需要開兩個 terminal，一個 `yarn start` 一個 `yarn mock`。
+其實很簡單 `yarn mock & yarn start` 就都會運行了，但就會發現分不出 log 是從那個 server 發出的。<br>
+推薦使用[Concurrently](https://github.com/kimmobrunfeldt/concurrently)解決這件事：
+
+```
+yarn add -D concurrently
+```
+
+```json
+"scripts": {
+  "dev": "concurrently \"yarn:start\" \"yarn:mock\"",
 }
 ```

@@ -39,8 +39,12 @@ module.exports = {
     },
     nav: [
       {
-        text: "Blog",
+        text: "文章",
         link: "/"
+      },
+      {
+        text: "Articles",
+        link: "/en/"
       },
       {
         text: "About",

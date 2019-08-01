@@ -16,9 +16,17 @@ module.exports = {
         {
           id: "about",
           dirname: "_about",
-          path: "/about/",
-          layout: "IndexAbout",
-          itemLayout: "Writing"
+          path: "/about/"
+        },
+        {
+          id: "en",
+          dirname: "_en",
+          path: "/en/",
+          itemLayout: "Post",
+          itemPermalink: "/en/:year/:month/:day/:slug",
+          pagination: {
+            lengthPerPage: 5
+          }
         }
       ];
 

@@ -5,13 +5,15 @@ tag:
   - JavaScript
 ---
 
-# Json-server with multiple files
+# `json-server` with multiple files
 
-[You can find a template here.](https://github.com/newsbielt703/json-server-mulitple-files-sample)
+[繁體中文](/2019/07/21/json-server-with-multiple-files/) | English
 
 First of all, I'm not a native speaker of English.
 
 ## Intro
+
+[You can find a template here.](https://github.com/newsbielt703/json-server-mulitple-files-sample)
 
 First, let's take a look at [json-server#getting-started](https://github.com/typicode/json-server#getting-started) :
 

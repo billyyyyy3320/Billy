@@ -5,7 +5,9 @@ tag:
   - JavaScript
 ---
 
-# json-server 多檔案結構
+# `json-server` 多檔案結構
+
+繁體中文 | [English](/en/2019/07/21/json-server-with-multiple-files/)
 
 ## 前言
 

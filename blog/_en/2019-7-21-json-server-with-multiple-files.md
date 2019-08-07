@@ -15,6 +15,10 @@ First of all, I'm not a native speaker of English.
 
 [You can find a template here.](https://github.com/newsbielt703/json-server-mulitple-files-sample)
 
+I'm going to share how I work with `json-server`, but perhaps there is another way you work more comfortable.
+
+### What is `json-server`?
+
 First, let's take a look at [json-server#getting-started](https://github.com/typicode/json-server#getting-started) :
 
 Create a `db.json` file with some data
@@ -46,8 +50,6 @@ Now if you go to http://localhost:3000/posts/1, you'll get
 It's pretty simple. However, the data might be more complicated in real world, so I'm going to create a file for each api.
 
 ## Starting
-
-當下版本為 `"json-server": "^0.15.0"`
 
 ### Structure with multiple files
 
@@ -200,10 +202,10 @@ apiFiles.forEach(filePath => {
   const api = require(filePath);
   let [, url] = filePath.split('mock/');
   url = url.slice(0, url.length - 3);
-  data[url.replace(/\//g, '-')] = api; // 只有這裡更動
+  data[url.replace(/\//g, '-')] = api; // the only change
 });
 
-// data會是
+// data will be something like:
 // { 'blog-comments': [ { id: 1, body: 'some comment', postId: 1 } ],
 //   'blog-posts': [ { id: 1, title: 'json-server', author: 'tydpicode' } ],
 //   'blog-profile': { name: 'typicode' },
@@ -379,3 +381,7 @@ yarn add -D concurrently
   "dev": "concurrently \"yarn:start\" \"yarn:mock\"",
 }
 ```
+
+---
+
+End.

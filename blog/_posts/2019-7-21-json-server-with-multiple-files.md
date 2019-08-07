@@ -11,7 +11,11 @@ tag:
 
 ## 前言
 
-附上 [repo](https://github.com/newsbielt703/json-server-mulitple-files-sample)
+先附上[範例](https://github.com/newsbielt703/json-server-mulitple-files-sample)
+
+這篇文章只是分享我自己運用的方法，或許有更好的 Best practice 也說不定。
+
+### `json-server` 能幹麻
 
 先簡單看過 json-server 提供的 [Getting started](https://github.com/typicode/json-server#getting-started)
 
@@ -379,3 +383,7 @@ yarn add -D concurrently
   "dev": "concurrently \"yarn:start\" \"yarn:mock\"",
 }
 ```
+
+---
+
+End.

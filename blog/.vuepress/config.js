@@ -14,9 +14,14 @@ module.exports = {
     modifyBlogPluginOptions(blogPlugnOptions) {
       const writingDirectoryClassifier = [
         {
-          id: "about",
-          dirname: "_about",
-          path: "/about/"
+          id: "post",
+          dirname: "_posts",
+          path: "/post/",
+          itemLayout: "Post",
+          itemPermalink: "/:year/:month/:day/:slug",
+          pagination: {
+            lengthPerPage: 5
+          }
         },
         {
           id: "en",
@@ -31,7 +36,7 @@ module.exports = {
       ];
 
       blogPlugnOptions.directories = [
-        ...blogPlugnOptions.directories,
+        // ...blogPlugnOptions.directories,
         ...writingDirectoryClassifier
       ];
 
@@ -40,15 +45,11 @@ module.exports = {
     nav: [
       {
         text: "文章",
-        link: "/"
+        link: "/post/"
       },
       {
         text: "Articles",
         link: "/en/"
-      },
-      {
-        text: "About",
-        link: "/about/"
       },
       {
         text: "Resume",

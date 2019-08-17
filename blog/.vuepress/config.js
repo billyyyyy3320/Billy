@@ -51,10 +51,10 @@ module.exports = {
         text: "Articles",
         link: "/en/"
       },
-      {
-        text: "Resume",
-        link: "https://billychin.netlify.com/resume.pdf"
-      }
+      // {
+      //   text: "Resume",
+      //   link: "https://billychin.netlify.com/resume.pdf"
+      // }
     ],
     footer: {
       contact: [

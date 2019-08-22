@@ -15,7 +15,7 @@ First of all, I'm not a native speaker of English.
 
 [You can find a template here.](https://github.com/newsbielt703/json-server-mulitple-files-sample)
 
-I'm going to share how I work with `json-server`, but perhaps there is another way you work more comfortable.
+I'm going to share how I work with `json-server`, but perhaps there's another way you work more comfortable.
 
 ### What is `json-server`?
 
@@ -61,7 +61,7 @@ Create a new folder `mock`, and add a script in `package.json`:
 }
 ```
 
-First, transform `db.json` into `db.js`：
+First, transform `db.json` into `db.js`:
 
 ```JavaScript
 // db.js
@@ -73,7 +73,7 @@ module.exports = () => ({
 });
 ```
 
-It means I can write some stuff like：
+Since it's no longer a json file, you can load data from separate files:
 
 ```JavaScript
 // db.js
@@ -87,7 +87,7 @@ module.exports = () => ({
 });
 ```
 
-Create corresponding files, for example：
+Create corresponding files, for example:
 
 ```JavaScript
 // posts.js
@@ -96,9 +96,9 @@ module.exports = [{ id: 1, title: "json-server", author: "typicode" }];
 
 ### Import files automatically
 
-It's annoyed that I have to import the file whenever I create one.
+It's not very handy that you have to import the file whenever you create one.
 
-Leverage [glob](https://github.com/isaacs/node-glob) to get file names：
+Let's leverage [glob](https://github.com/isaacs/node-glob) to get file names so that we can load files dynamically:
 
 ```JavaScript
 // db.js
@@ -133,7 +133,7 @@ module.exports = () => {
 };
 ```
 
-But I don't need `db.js` to be a API.<br>
+But we don't need to load `db.js` to be a API, right?<br>
 Rename `db.js > _db.js` and add a rule to prevent all files with `_` prefix from transforming API routes:
 
 ```JavaScript
@@ -146,7 +146,7 @@ const apiFiles = glob.sync(Path.resolve(__dirname, "./") + "/**/[!_]*.js", {
 ### Monitor multiple files
 
 Since json-server will automatically restart only when `_db.js` is changed, I have to do it whenever adding a API or modify data.
-[Solution](https://github.com/typicode/json-server/issues/434#issuecomment-273498639)：
+[Solution](https://github.com/typicode/json-server/issues/434#issuecomment-273498639):
 
 ```
 yarn add -D nodemon
@@ -169,7 +169,7 @@ What if APIs become more complicated:
 /documents/query
 ```
 
-The mock folder structure:
+I wish I can have the mock folder structure like below:
 
 ```
 ├── _db.js
@@ -216,7 +216,7 @@ module.exports = () => {
 };
 ```
 
-create `config.json` `router.json` files：
+Create `config.json` and `router.json` files:
 （[config usage](https://github.com/typicode/json-server#cli-usage)[router usage](https://github.com/typicode/json-server#add-custom-routes)）
 
 ```json
@@ -236,9 +236,9 @@ create `config.json` `router.json` files：
 ```
 
 Now `/documents/query` will correspond to `/documents-query`.<br>
-If `/documents/query/something` is existed, it'll correspond to `/documents-query-something`.That's totally handle the folder structure.
+If `/documents/query/something` is existed, it'll correspond to `/documents-query-something`. That's totally handle the folder structure.
 
-Last modified：
+Last modified:
 
 ```JavaScript
 // _db.js
@@ -263,7 +263,7 @@ module.exports = () => {
 };
 ```
 
-If there's a API route `/documents`, I can restructure
+Now if there's a API route `/documents`, I can restructure
 
 ```
 ├── _db.js

@@ -17,7 +17,7 @@ tag:
 
 ### `json-server` 能幹麻
 
-先簡單看過 json-server 提供的 [Getting started](https://github.com/typicode/json-server#getting-started)
+先簡單看過 json-server 提供的 [Getting started](https://github.com/typicode/json-server#getting-started)：
 
 Create a `db.json` file with some data
 
@@ -53,7 +53,7 @@ Now if you go to http://localhost:3000/posts/1, you'll get
 
 ### 建立多檔案結構
 
-建立新的資料夾`mock`，並在`package.json`寫個 script:
+建立新的資料夾`mock`，並在`package.json`寫個 script：
 
 ```json
 "scripts": {
@@ -73,7 +73,7 @@ module.exports = () => ({
 });
 ```
 
-竟然如此那當然也能寫成：
+既然是 js，代表我們可以引入其他檔案：
 
 ```JavaScript
 // db.js
@@ -96,9 +96,9 @@ module.exports = [{ id: 1, title: "json-server", author: "typicode" }];
 
 ### db.js 自動引入檔案
 
-很快就會發現每次新增一個檔案都要引入一次，有夠麻煩。
+可以把資料拆分到多個不同檔案了，但是每次新增一個檔案都要引入一次，有夠麻煩。
 
-這邊運用[glob](https://github.com/isaacs/node-glob)取出檔名：
+這邊運用[glob](https://github.com/isaacs/node-glob)取出檔名，我們可以動態的引入檔案：
 
 ```JavaScript
 // db.js
@@ -169,7 +169,7 @@ yarn add -D nodemon
 /documents/query
 ```
 
-mock 資料夾結構：
+我希望我的 mock 資料夾結構如下：
 
 ```
 ├── _db.js
@@ -181,7 +181,7 @@ mock 資料夾結構：
     └── query.js
 ```
 
-修改`_db.js`規則：
+動手修改`_db.js`規則：
 
 ```JavaScript
 // db.js

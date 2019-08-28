@@ -2,6 +2,6 @@
 
 Source code for my personal site
 
-## Powered by VuePress
+## Powered by [vuepress-theme-blog](https://github.com/ulivz/vuepress-theme-blog)
 
-It is still work in progress, so does this blog. If you like it, check out [vuepress-theme-blog](https://github.com/ulivz/vuepress-theme-blog).
+It's still work in progress, and so is this blog.

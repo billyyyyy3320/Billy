@@ -9,8 +9,6 @@ tag:
 
 [繁體中文](/2019/07/21/json-server-with-multiple-files/) | English
 
-First of all, I'm not a native speaker of English.
-
 ## Intro
 
 [You can find a template here.](https://github.com/newsbielt703/json-server-mulitple-files-sample)

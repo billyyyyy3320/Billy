@@ -25,10 +25,10 @@ tag:
 `merge` 會造成不必要的 merge commit，或許可以 fast-forward 的情況 `merge` 也可以不產生多餘的 commit，但遇到衝突就沒轍了，而相反的`rebase`就沒這煩惱了。
 
 再來`rebase` 讓歷史很清晰，就像海賊王合體一樣，就算合體完成我還是一看就知道是由什麼組成，來自哪裡都擺在一塊：
-![One Piece](./one-piece.gif)
+![One Piece](@assets/rebase/one-piece.gif)
 
 而 merge 就像七龍珠合體，合體完都摻在一起了：
-![Dragon Ball](./dragon-ball.gif)
+![Dragon Ball](@assets/rebase/dragon-ball.gif)
 
 但就算我愛用`rebase`也不代表都不用`merge`了，merge commit 可以幫助追蹤這一坨 commit 來自哪裡。所以我會在自己工作的分支上總是使用`rebase`來解衝突，而當要把分支併入主分支時使用`merge`。(這只是我喜歡的做法，實際上取決於團隊共識)
 
@@ -36,11 +36,11 @@ tag:
 
 這是不用 `rebase` 所造成的歷史:
 
-![merge history](./merge.png)
+![merge history](@assets/rebase/merge.png)
 
 這是善用 `rebase` 所造成的歷史:
 
-![rebase history](./rebase.png)
+![rebase history](@assets/rebase/rebase.png)
 
 ### 自由修改所有 commits
 

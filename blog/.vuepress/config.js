@@ -3,17 +3,17 @@ module.exports = (options, context, api) => {
   return {
     title: "Billy Chin",
     description: "Billy Chin's personal website",
-    theme: "@vuepress/theme-blog", // OR shortcut: @vuepress/blog
+    theme: "@vuepress/theme-blog",
     plugins: [
       [
         "@vuepress/google-analytics",
         {
-          ga: process.env.GA // UA-00000000-0
+          ga: process.env.GA
         }
       ]
     ],
     themeConfig: {
-      modifyBlogPluginOptions(blogPlugnOptions) {
+      modifyBlogPluginOptions(blogPluginOptions) {
         const writingDirectoryClassifier = [
           {
             id: "post",
@@ -36,13 +36,8 @@ module.exports = (options, context, api) => {
             }
           }
         ];
-
-        blogPlugnOptions.directories = [
-          // ...blogPlugnOptions.directories,
-          ...writingDirectoryClassifier
-        ];
-
-        return blogPlugnOptions;
+        blogPluginOptions.directories = [...writingDirectoryClassifier];
+        return blogPluginOptions;
       },
       nav: [
         {

@@ -2,27 +2,28 @@
 @require './content.styl'
 
 #app
-  background-color: #282A2B
+  background-color $mainBgColor
 
 // header
 #header
-  background-color: #282A2B
+  background-color $mainBgColor
 
-.header-wrapper 
+.header-wrapper
   .title a
-    color: $textColor
-  .header-right-wrap .nav .nav-item a
-    color: $textColor
-    &.router-link-active
-      color: $accentColor
-    &:hover
-      border-bottom: 1px solid $accentColor
-      color: $accentColor
+    color $textColor
 
-.search-box input 
-  color: #000000
+  .header-right-wrap .nav .nav-item a
+    color $textColor
+
+    &.router-link-active
+      color $accentColor
+
+    &:hover
+      border-bottom 1px solid $accentColor
+      color $accentColor
+
+.search-box input
+  color #000000
 
 blockquote
-  color: $accentColor
-
-
+  color $accentColor

@@ -24,7 +24,7 @@ Both `merge` and `rebase` can join two branches together, Let's take a look the 
 `rebase` don't care about commit time. It keep every commit which comes from the same branch together. It's like the fusion in One Piece, even though the fusion is completed, I can still recognize each part 👍:
 ![One Piece](@assets/rebase/one-piece.gif)
 
-### Solve conflicts
+### The way to solve conflicts
 
 `merge` has to generate a merge commit, maybe it can be [fast-forward](https://git-scm.com/docs/git-merge#_fast_forward_merge), but when there's conflicts, you have to solve it and commit your changes.
 
@@ -81,9 +81,9 @@ pick 0967d97 feat: add E feature
 
 You're able to reorder, edit commit message, remove commit, or even meld some commits into a previous commit...
 
-## Its homie `git push --force-with-lease`
+## `git push --force-with-lease`
 
-### usage
+### Usage
 
 `rebase` is really useful, but it means you change the history. We don't care about that if the branch is just a local branch. But if you have pushed it to the remote repository, you have to run `git push -f` which is very dangerous.
 

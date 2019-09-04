@@ -22,7 +22,7 @@ tag:
 `rebase`則是重定基底，兩個分支的 commits 時間我不管，但是同個分支內的 commits 都放在一起，就像海賊王合體一樣，就算合體完成我還是一看就知道是由什麼組成，因為來自哪裡都擺在一塊 👍：
 ![One Piece](@assets/rebase/one-piece.gif)
 
-### 解決衝突
+### 解決衝突的方式
 
 `merge`會產生一個 merge commit，沒有衝突的情況可以 [fast-forward](https://git-scm.com/docs/git-merge#_fast_forward_merge)，但遇到衝突，就一定得要提交一個 commit 來解決衝突。
 

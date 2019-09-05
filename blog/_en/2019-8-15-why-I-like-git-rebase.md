@@ -26,7 +26,7 @@ Both `merge` and `rebase` can join two branches together, Let's take a look the 
 
 ### The way to solve conflicts
 
-`merge` has to generate a merge commit, maybe it can be [fast-forward](https://git-scm.com/docs/git-merge#_fast_forward_merge), but when there's conflicts, you have to solve it and commit your changes.
+`merge` has to generate a merge commit, maybe it can be [fast-forward](https://git-scm.com/docs/git-merge#_fast_forward_merge), but when there're conflicts, you have to solve it and commit your changes.
 
 On the other hand, `rebase` won't generate any lengthy commit 👍.
 

@@ -41,11 +41,11 @@ module.exports = (options, context, api) => {
       },
       nav: [
         {
-          text: "文章",
+          text: "貼文",
           link: "/post/"
         },
         {
-          text: "Articles",
+          text: "Blog",
           link: "/en/"
         }
         // {

@@ -7,7 +7,7 @@ tag:
 
 # `json-server` with multiple files
 
-[繁體中文](/2019/07/21/json-server-with-multiple-files/) | English
+[繁體中文](/zh/2019/07/21/json-server-with-multiple-files/) | English
 
 ## Intro
 

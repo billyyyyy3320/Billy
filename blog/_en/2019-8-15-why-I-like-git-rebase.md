@@ -6,7 +6,7 @@ tag:
 
 # Why I like "`git rebase`"
 
-[繁體中文](/2019/08/15/why-I-like-git-rebase/) | English
+[繁體中文](/zh/2019/08/15/why-I-like-git-rebase/) | English
 
 Please take a look at [documentation](https://git-scm.com/docs/git-rebase) if you've never used `git rebase` before.
 

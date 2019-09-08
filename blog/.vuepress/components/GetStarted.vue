@@ -1,5 +1,5 @@
 <template>
-  <router-link class="start" to="/post/">Get Started~</router-link>
+  <router-link class="start" to="/en/">Get Started~</router-link>
 </template>
 
 <style scoped>

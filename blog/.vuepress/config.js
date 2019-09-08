@@ -16,11 +16,11 @@ module.exports = (options, context, api) => {
       modifyBlogPluginOptions(blogPluginOptions) {
         const writingDirectoryClassifier = [
           {
-            id: "post",
-            dirname: "_posts",
-            path: "/post/",
+            id: "zh",
+            dirname: "_zh",
+            path: "/zh/",
             itemLayout: "Post",
-            itemPermalink: "/:year/:month/:day/:slug",
+            itemPermalink: "/zh/:year/:month/:day/:slug",
             pagination: {
               lengthPerPage: 5
             }
@@ -42,7 +42,7 @@ module.exports = (options, context, api) => {
       nav: [
         {
           text: "貼文",
-          link: "/post/"
+          link: "/zh/"
         },
         {
           text: "Blog",

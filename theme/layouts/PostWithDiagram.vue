@@ -8,7 +8,7 @@
       <Content slot-key="diagram" v-if="isOpen" />
     </transition>
     <div class="diagram-controller">
-      <toggle-button v-model="isOpen" :color="{checked: '#8be9fd', unchecked:'#a8a8b2'}" />
+      <Switches v-model="isOpen" theme="custom" color="default" type-bold="true" />
     </div>
     <Post />
   </div>
@@ -16,7 +16,7 @@
 
 <script>
 import Post from "@parent-theme/layouts/Post";
-import { ToggleButton } from "vue-js-toggle-button";
+import Switches from "vue-switches";
 import { setTimeout } from "timers";
 export default {
   name: "PostWithDiagram",
@@ -27,7 +27,7 @@ export default {
       toc: null
     };
   },
-  components: { Post, ToggleButton },
+  components: { Post, Switches },
   mounted() {
     this.contentWrapper = document.querySelector(".content-wrapper");
     this.contentWrapper.classList.add("with-diagram");
@@ -52,7 +52,6 @@ export default {
 </script>
 
 <style lang="stylus">
-// diagram
 .content__diagram
   position fixed
   top 80px
@@ -67,21 +66,23 @@ export default {
   img
     width 100%
 
-@media (max-width: $MQMobile)
-  .content__diagram
-    top 62px
-    height calc(100vh - 62px)
-
-// controller
 .diagram-controller
   cursor pointer
   position fixed
-  top 0
+  top 8px
   left 50%
   z-index 12
   padding 5px
   transform translateX(-50%) translateY(50%)
   transition left 1s
+
+@media (max-width: $MQMobile)
+  .content__diagram
+    top 62px
+    height calc(100vh - 62px)
+
+  .diagram-controller
+    top 0
 
 // transition
 .diagram-collapse-enter-active, .diagram-collapse-leave-active
@@ -101,4 +102,20 @@ export default {
 
     &.enter
       padding-left 720px
+
+// switcher
+&.vue-switcher-color--default
+  div
+    background-color $accentColor
+
+    &:after
+      // for the circle on the switch
+      background-color $textColor
+
+  &.vue-switcher--unchecked
+    div
+      background-color #a8a8b2
+
+      &:after
+        background-color $textColor
 </style>

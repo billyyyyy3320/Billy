@@ -202,3 +202,7 @@ When everything is done, VuePress run `generated`.✌️
 ## Wrap up
 
 So, this approach really led me from beginning to end. Although it may not cover every concept, it saved me from thinking where should I start? Hope it can help you get clear about VuePress or feel more comfortable to dive into the source code.
+
+::: slot diagram
+![VuePress lifecycle](@assets/vuepress/lifecycle.png)
+:::

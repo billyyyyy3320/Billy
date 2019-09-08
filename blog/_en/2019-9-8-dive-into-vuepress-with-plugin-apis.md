@@ -170,7 +170,7 @@ VuePress leverages [webpack-dev-server](https://github.com/webpack/webpack-dev-s
 
 > Equivalent to after in webpack-dev-server. You can use it to execute custom middleware after all other middleware.
 
-When source files, config or frontmatters are changed, VuePress will rerun [Prepare](#prepare) to reach real hot-reload.
+Whenever a source file is added or removed, config or frontmatters are changed, VuePress will rerun [Prepare](#prepare) to reach real hot-reload.
 Source files and config are watched by [chokidar](https://github.com/paulmillr/chokidar). In the other hand, watching frontmatters are handled by the markdown loader I mentioned before.
 
 ## Build

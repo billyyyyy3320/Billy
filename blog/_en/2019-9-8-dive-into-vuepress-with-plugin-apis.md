@@ -45,7 +45,7 @@ I've created a diagram to show the whole life-cycle. There's a switch button at 
 
 ### How do plugins work
 
-All the plugins options will be in initialized at the beginning. They all have their own class. You can take a look at `@vuepress/core/lib/node/plugin-api/abstract`. Later, whenever VuePress get the plugin config, it'll push them into each corresponding option. And at the timing you saw in my diagram, they will be executed.
+All the plugin options will be in initialized at the beginning. They all have their own class. You can take a look at `@vuepress/core/lib/node/plugin-api/abstract`. Later, whenever VuePress get the plugin config, it'll push them into each corresponding option. And at the timing you saw in my diagram, they will be executed.
 
 ## Prepare
 

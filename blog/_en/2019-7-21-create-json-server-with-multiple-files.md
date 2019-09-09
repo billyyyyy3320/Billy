@@ -5,19 +5,19 @@ tag:
   - JavaScript
 ---
 
-# `json-server` 多檔案結構
+# Create `json-server` with multiple files
 
-繁體中文 | [English](/en/2019/07/21/json-server-with-multiple-files/)
+[繁體中文](/zh/2019/07/21/create-json-server-with-multiple-files/) | English
 
-## 前言
+## Intro
 
-先附上[範例](https://github.com/newsbielt703/json-server-mulitple-files-sample)
+[You can find a template here.](https://github.com/newsbielt703/json-server-mulitple-files-sample)
 
-這篇文章只是分享我自己運用的方法，或許有更好的 Best practice 也說不定。
+I'm going to share how I work with `json-server`, but perhaps there's another way you work more comfortable.
 
-### `json-server` 能幹麻
+### What is `json-server`?
 
-先簡單看過 json-server 提供的 [Getting started](https://github.com/typicode/json-server#getting-started)：
+First, let's take a look at [json-server#getting-started](https://github.com/typicode/json-server#getting-started) :
 
 Create a `db.json` file with some data
 
@@ -45,15 +45,13 @@ Now if you go to http://localhost:3000/posts/1, you'll get
 { "id": 1, "title": "json-server", "author": "typicode" }
 ```
 
-就那麼簡單，但是實際專案中資料會更龐大複雜，需要更多 API 接口，於是我決定為每個 API 對應一個檔案。
+It's pretty simple. However, the data might be more complicated in real world, so I'm going to create a file for each api.
 
-## 開始
+## Starting
 
-當下版本為 `"json-server": "^0.15.0"`
+### Structure with multiple files
 
-### 建立多檔案結構
-
-建立新的資料夾`mock`，並在`package.json`寫個 script：
+Create a new folder `mock`, and add a script in `package.json`:
 
 ```json
 "scripts": {
@@ -61,11 +59,11 @@ Now if you go to http://localhost:3000/posts/1, you'll get
 }
 ```
 
-首先 db.json 可以改成 js 的格式：
+First, transform `db.json` into `db.js`:
 
 ```JavaScript
 // db.js
-// 必須是回傳一個return物件的function
+// Should export a function which return an object
 module.exports = () => ({
   posts: [{ id: 1, title: "json-server", author: "typicode" }],
   comments: [{ id: 1, body: "some comment", postId: 1 }],
@@ -73,7 +71,7 @@ module.exports = () => ({
 });
 ```
 
-既然是 js，代表我們可以引入其他檔案：
+Since it's no longer a json file, you can load data from separate files:
 
 ```JavaScript
 // db.js
@@ -87,18 +85,18 @@ module.exports = () => ({
 });
 ```
 
-新建對應檔案 例如：
+Create corresponding files, for example:
 
 ```JavaScript
 // posts.js
 module.exports = [{ id: 1, title: "json-server", author: "typicode" }];
 ```
 
-### db.js 自動引入檔案
+### Import files automatically
 
-可以把資料拆分到多個不同檔案了，但是每次新增一個檔案都要引入一次，有夠麻煩。
+It's not very handy that you have to import the file whenever you create one.
 
-這邊運用[glob](https://github.com/isaacs/node-glob)取出檔名，我們可以動態的引入檔案：
+Let's leverage [glob](https://github.com/isaacs/node-glob) to get file names so that we can load files dynamically:
 
 ```JavaScript
 // db.js
@@ -107,7 +105,7 @@ const glob = require("glob");
 const apiFiles = glob.sync(Path.resolve(__dirname, "./") + "/**/*.js", {
   nodir: true
 });
-// apiFiles會是
+// apiFiles will be :
 // [ '/Users/billy/Desktop/json-server-multiple-files-sample/mock/comments.js',
 //   '/Users/billy/Desktop/json-server-multiple-files-sample/mock/db.js',
 //   '/Users/billy/Desktop/json-server-multiple-files-sample/mock/posts.js',
@@ -122,7 +120,7 @@ apiFiles.forEach(filePath => {
   data[url] = api;
 });
 
-// data會是
+// data will be :
 // { 'comments': [ { id: 1, body: 'some comment', postId: 1 } ],
 //   'db': {},
 //   'posts': [ { id: 1, title: 'json-server', author: 'typicode' } ],
@@ -133,8 +131,8 @@ module.exports = () => {
 };
 ```
 
-但是我不需要 db.js 也被拿去當 API 啊<br>
-把`db.js`改名為`_db.js`，趁機改個規則 把所有開頭為`_`的檔案不視為 API 接口：
+But we don't need to load `db.js` to be a API, right?<br>
+Rename `db.js > _db.js` and add a rule to prevent all files with `_` prefix from transforming API routes:
 
 ```JavaScript
 // db.js
@@ -143,10 +141,10 @@ const apiFiles = glob.sync(Path.resolve(__dirname, "./") + "/**/[!_]*.js", {
 // ...
 ```
 
-### 監聽多檔案
+### Monitor multiple files
 
-json-server 只有在`_db.js`有更動時重啟，每當我新增 API，或修改回傳資料，我還得手動 `yarn mock`，好麻煩啊，
-[解決方法](https://github.com/typicode/json-server/issues/434#issuecomment-273498639)：
+Since json-server will automatically restart only when `_db.js` is changed, I have to do it whenever adding a API or modify data.
+[Solution](https://github.com/typicode/json-server/issues/434#issuecomment-273498639):
 
 ```
 yarn add -D nodemon
@@ -158,9 +156,9 @@ yarn add -D nodemon
 }
 ```
 
-### 更完整的 router
+### Better router
 
-快要完成了，那 API 變得複雜點呢：
+What if APIs become more complicated:
 
 ```
 /blog/posts
@@ -169,7 +167,7 @@ yarn add -D nodemon
 /documents/query
 ```
 
-我希望我的 mock 資料夾結構如下：
+I wish I can have the mock folder structure like below:
 
 ```
 ├── _db.js
@@ -181,7 +179,7 @@ yarn add -D nodemon
     └── query.js
 ```
 
-動手修改`_db.js`規則：
+Modify rules of `_db.js`:
 
 ```JavaScript
 // db.js
@@ -202,10 +200,10 @@ apiFiles.forEach(filePath => {
   const api = require(filePath);
   let [, url] = filePath.split('mock/');
   url = url.slice(0, url.length - 3);
-  data[url.replace(/\//g, '-')] = api; // 只有這裡更動
+  data[url.replace(/\//g, '-')] = api; // the only change
 });
 
-// data會是
+// data will be something like:
 // { 'blog-comments': [ { id: 1, body: 'some comment', postId: 1 } ],
 //   'blog-posts': [ { id: 1, title: 'json-server', author: 'tydpicode' } ],
 //   'blog-profile': { name: 'typicode' },
@@ -216,8 +214,8 @@ module.exports = () => {
 };
 ```
 
-建立`config.json`和`router.json`：
-（[config 配置](https://github.com/typicode/json-server#cli-usage)[router 配置](https://github.com/typicode/json-server#add-custom-routes)）
+Create `config.json` and `router.json` files:
+（[config usage](https://github.com/typicode/json-server#cli-usage)[router usage](https://github.com/typicode/json-server#add-custom-routes)）
 
 ```json
 // config.json
@@ -235,10 +233,10 @@ module.exports = () => {
 }
 ```
 
-這樣一來 `/documents/query` 就會對應到 `/documents-query`，<br>
-如果有`/documents/query/something` 那就會對應到`/documents-query-something`，完全符合現在的資料夾結構了。
+Now `/documents/query` will correspond to `/documents-query`.<br>
+If `/documents/query/something` is existed, it'll correspond to `/documents-query-something`. That's totally handle the folder structure.
 
-最後稍微修改一下：
+Last modified:
 
 ```JavaScript
 // _db.js
@@ -263,7 +261,7 @@ module.exports = () => {
 };
 ```
 
-萬一有個 API 是`/documents` 我就能把
+Now if there's a API route `/documents`, I can restructure
 
 ```
 ├── _db.js
@@ -278,7 +276,7 @@ module.exports = () => {
 └── router.json
 ```
 
-更條理的改成：
+to be something like：
 
 ```
 ├── _db.js
@@ -293,14 +291,12 @@ module.exports = () => {
 └── router.json
 ```
 
-## 其他
+## Others
 
-### 中文解碼
+### Decode Chinese characters
 
-假使我有個 API 為`documents/基本`，我是訪問不到他的。<br>
-`基本`會被編碼成`%E5%9F%BA%E6%9C%AC`，編碼規則是 ％加上十六進制，那就新增一個 middleware 來處理吧。<br>
-每次收到 request 時都會經過 middleware，判斷 url 若包含編碼規則的字串，那就把 url 解碼。<br>
-使用我前面預留的`_`作為檔名開頭:
+If there's a API route `documents/基本`, I won't be able to visit it.
+`基本`will be encode to be`%E5%9F%BA%E6%9C%AC`. Since we know the encoded string is consisted of the percent character "%" followed by two hexadecimal digits, I can create a middleware to handle it. Use prefix `_` which I've reserved. Decode url when the url contains the encoded string:
 
 ```
 ├── _db.js
@@ -339,11 +335,11 @@ module.exports = function(req, res, next) {
 }
 ```
 
-### POST 轉成 GET
+### Get data using POST
 
-有時候會用 POST 來取得資料，但 json-server 提供的 custom route 都是 GET。
-[解決方法](https://github.com/typicode/json-server/issues/453#issuecomment-343048811)<br>
-一樣使用 middleware 處理，判斷 request 的方式為 POST 時就轉成 GET。
+Sometimes People have to get data by POST instead of GET, but `custom route` of `json-server` will always be GET.
+[Solution](https://github.com/typicode/json-server/issues/453#issuecomment-343048811)<br>
+Again `middleware`. To detect whenever the method is POST, transform it into GET.
 
 ```JavaScript
 // _postAsGet.js
@@ -368,11 +364,11 @@ module.exports = function(req, res, next) {
 }
 ```
 
-### 同時運行 App 與 mock server 在一個 terminal
+### Run App and mock server at the same time in one terminal
 
-你可能覺得需要開兩個 terminal，一個 `yarn start` 一個 `yarn mock`。
-其實很簡單 `yarn mock & yarn start` 就都會運行了，但就會發現分不出 log 是從那個 server 發出的。<br>
-推薦使用[Concurrently](https://github.com/kimmobrunfeldt/concurrently)解決這件事：
+It's kind of annoyed to open two terminal to run each server.
+Actually, I can just run `yarn mock & yarn start`. But how do I know where logs come from ?<br>
+I leverage [Concurrently](https://github.com/kimmobrunfeldt/concurrently) to solve this problem:
 
 ```
 yarn add -D concurrently

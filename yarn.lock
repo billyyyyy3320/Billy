@@ -882,10 +882,10 @@
   dependencies:
     lodash.throttle "^4.1.1"
 
-"@vuepress/plugin-blog@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-blog/-/plugin-blog-1.2.2.tgz#ba6e380447cfc8b26bcf7816ca041dcc0949c942"
-  integrity sha512-9b0gZD+XfLGa3jjNiCZWd2p2gLchg3RlDWOcRiUSl5IkYs06aaPIOCt+TpgZuYZwm/kaHv8H+b7JjFI+vZXAWw==
+"@vuepress/plugin-blog@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-blog/-/plugin-blog-1.2.5.tgz#08a5cf3dbe1c048082682922fda1bd3fd2fa3477"
+  integrity sha512-l6c6uF2lELZEjSROcm6hU6TRXpZgsXGj7klmZ1ousjaVWwMBFnEw/6Ak0U0lKlRyphii/oa3GjM5J6YWzzrivQ==
   dependencies:
     vuejs-paginate "^2.1.0"
 
@@ -963,12 +963,12 @@
     semver "^6.0.0"
     upath "^1.1.0"
 
-"@vuepress/theme-blog@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@vuepress/theme-blog/-/theme-blog-1.2.3.tgz#5842c0a765f51c12f11978185be3e6f1758cf7c2"
-  integrity sha512-zD34kOfyCQT90rRFy5nLFI/daTc/gSPMGt3HR+pG+RP9HbCWQtmljl9RsVHzS8vm1vFhRtgHQ5331m4/YSZeoA==
+"@vuepress/theme-blog@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@vuepress/theme-blog/-/theme-blog-1.2.5.tgz#3102b893f14f79121deafe9cd1dd26a8991e992c"
+  integrity sha512-U8ZwCCMvnx4QAZiABiUe53Atpy+PvkplmFlihRRPsE9x962DP+U+p151RO7m0QlLSM3k8h0amYjvPQ1j/CL6Bg==
   dependencies:
-    "@vuepress/plugin-blog" "1.2.2"
+    "@vuepress/plugin-blog" "^1.2.5"
     "@vuepress/plugin-medium-zoom" "1.0.0"
     "@vuepress/plugin-nprogress" "1.0.0"
     "@vuepress/plugin-pwa" "1.0.0"

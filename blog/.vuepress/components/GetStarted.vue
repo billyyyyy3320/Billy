@@ -1,10 +1,14 @@
 <template>
-  <router-link class="start" to="/en/">Get Started~</router-link>
+  <div class="start">
+    <router-link to="/en/">Get Started~</router-link>
+  </div>
 </template>
 
 <style scoped>
 .start {
-  margin-top: 20px;
+  margin: 50px 0;
+}
+.start > a {
   text-decoration: none;
   font-size: 1.2rem;
   border: 1px solid;

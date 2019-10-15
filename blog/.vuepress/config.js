@@ -36,8 +36,20 @@ module.exports = (options, context, api) => {
             }
           }
         ];
+        const sitemap = {
+          hostname: "https://billychin.netlify.com/"
+        };
+        const comment = {
+          service: "vssue",
+          autoCreateIssue: true,
+          prefix: "[Post]",
+          owner: "newsbielt703",
+          repo: "billy",
+          clientId: "4119e8c1b0093fc5d034",
+          clientSecret: "1ac1176791689b1ca31037c39489fc7b0667015d"
+        };
         blogPluginOptions.directories = [...writingDirectoryClassifier];
-        return blogPluginOptions;
+        return { ...blogPluginOptions, sitemap, comment };
       },
       nav: [
         {

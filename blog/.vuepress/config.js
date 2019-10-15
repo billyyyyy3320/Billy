@@ -3,7 +3,7 @@ module.exports = (options, context, api) => {
   return {
     title: "Billy Chin",
     description: "Billy Chin's personal website",
-    theme: path.resolve(__dirname, "../../theme"),
+    theme: "@vuepress/blog",
     plugins: [
       [
         "@vuepress/google-analytics",

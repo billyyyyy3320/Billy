@@ -15,9 +15,8 @@
 </template>
 
 <script>
-import Post from "@parent-theme/layouts/Post";
+import Post from "@vuepress/theme-blog/layouts/Post";
 import Switches from "vue-switches";
-import { setTimeout } from "timers";
 export default {
   name: "PostWithDiagram",
   data() {
@@ -110,12 +109,12 @@ export default {
 
     &:after
       // for the circle on the switch
-      background-color $textColor
+      background-color white
 
   &.vue-switcher--unchecked
     div
-      background-color #a8a8b2
+      background-color $textColor
 
       &:after
-        background-color $textColor
+        background-color white
 </style>

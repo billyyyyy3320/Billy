@@ -2,6 +2,8 @@
 date: 2019-8-15
 tag:
   - Git
+comment:
+  title: Why I like "git rebase"
 ---
 
 # 為什麼我愛用`git rebase`

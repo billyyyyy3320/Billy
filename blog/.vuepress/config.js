@@ -59,11 +59,11 @@ module.exports = (options, context, api) => {
         {
           text: "Blog",
           link: "/en/"
+        },
+        {
+          text: "Github",
+          link: "https://github.com/newsbielt703"
         }
-        // {
-        //   text: "Resume",
-        //   link: "https://billychin.netlify.com/resume.pdf"
-        // }
       ],
       footer: {
         contact: [

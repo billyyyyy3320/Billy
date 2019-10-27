@@ -2,6 +2,7 @@
 date: 2019-8-15
 tag:
   - Git
+summary: 別老是只用`git merge`，來聊聊`git rebase`吧。我個人覺得`git push --force-with-lease`與`git rebase`是密不可分的。
 comment:
   title: Why I like "git rebase"
 ---

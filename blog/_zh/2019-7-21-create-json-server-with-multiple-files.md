@@ -3,6 +3,7 @@ date: 2019-7-21
 tag:
   - Frontend
   - JavaScript
+summary: 有了json-server前端可以繼續開發不依賴後端，把每個ＡＰＩ拆分成獨立檔案，讓開發或維護更方便。
 comment:
   title: Create json-server with multiple files
 ---

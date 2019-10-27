@@ -3,6 +3,7 @@ date: 2019-7-21
 tag:
   - Frontend
   - JavaScript
+summary: With json-server, Frontend engineers can develop without relying on Backend. splitting each API into separate files make developing and maintaining easier.
 ---
 
 # Create `json-server` with multiple files

@@ -6,6 +6,7 @@ tag:
   - VuePress
   - Frontend
   - JavaScript
+summary: The most important change in VuePress 1.x is Pluggable. It flashed on my mind that if I figure out the execution sequence of all the plugin APIs and what is really executed, maybe it's a special approach to understand the ins and outs of how VuePress works.
 ---
 
 # Dive into VuePress with Plugin APIs

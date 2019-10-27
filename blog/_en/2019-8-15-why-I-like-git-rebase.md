@@ -2,6 +2,7 @@
 date: 2019-8-15
 tag:
   - Git
+summary: Don't use merge all the time. Let's talk about rebase. In my opinion, we should always use `git push --force-with-lease` with `git rebase`.
 ---
 
 # Why I like "`git rebase`"

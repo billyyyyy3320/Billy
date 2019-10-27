@@ -2,7 +2,7 @@ const path = require("path");
 module.exports = (options, context, api) => {
   return {
     title: "Billy Chin",
-    description: "Billy Chin's personal website",
+    description: "Web development, Frontend, JavaScript",
     theme: "@vuepress/blog",
     plugins: [
       [

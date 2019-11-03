@@ -11,6 +11,8 @@ summary: The most important change in VuePress 1.x is Pluggable. It flashed on m
 
 # Dive into VuePress with Plugin APIs
 
+[繁體中文](/zh/2019/09/08/dive-into-vuepress-with-plugin-apis/) | English
+
 ## Plugin ???
 
 The most important change in VuePress 1.x is `Pluggable`. VP has a lot of core functions implemented by plugins, and offers many [options](https://v1.vuepress.vuejs.org/plugin/option-api.html) for developer to build their plugins. Moreover, `.vuepress/config.js` and `theme/index.js` are also plugins.

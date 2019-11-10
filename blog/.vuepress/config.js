@@ -37,7 +37,7 @@ module.exports = (options, context, api) => {
           }
         ];
         const sitemap = {
-          hostname: "https://billychin.netlify.com/"
+          hostname: "https://billyyyyy3320.com/"
         };
         const comment = {
           service: "vssue",

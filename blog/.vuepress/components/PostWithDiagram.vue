@@ -59,7 +59,7 @@ export default {
   max-width 100%
   height calc(100vh - 80px)
   overflow auto
-  background-color $mainBgColor
+  background-color #fff
   z-index 5
 
   img

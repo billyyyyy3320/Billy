@@ -101,9 +101,9 @@ To github.com:newsbielt703/test-git-push--force-with-lease.git
 error: failed to push some refs to 'git@github.com:newsbielt703/test-git-push--force-with-lease.git'
 ```
 
-### Bad things happen
+### Bad things happened
 
-What if you screw up, maybe you just run `git push -f` and someone lose his work? I found something interesting - [git-blame-someone-else](https:/github.com/jayphelps/git-blame-someone-else). Install it and run `git blame-someone-else "yourteammate <yourteamate@gmail.com>" <commit>`. See what happen below, it's no longer your fault:
+What if you screw up, maybe you have just run `git push -f` and someone lost his/her work? No worries. I found something interesting - [git-blame-someone-else](https:/github.com/jayphelps/git-blame-someone-else). Install it and run `git blame-someone-else "yourteammate <yourteamate@gmail.com>" <commit>`. See what happen below, it's no longer your fault:
 
 ```
 commit 70f45487814217d0226f7eae8d0caa0734775353 (HEAD -> master, origin/master)

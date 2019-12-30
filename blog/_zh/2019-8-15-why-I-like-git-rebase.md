@@ -2,7 +2,7 @@
 date: 2019-8-15
 tag:
   - Git
-summary: 別老是只用`git merge`，來聊聊`git rebase`吧。我個人覺得`git push --force-with-lease`與`git rebase`是密不可分的。
+summary: rebase比merge更直觀更乾淨，別再只用merge來分別分支了。
 comment:
   title: Why I like "git rebase"
 ---
@@ -11,7 +11,9 @@ comment:
 
 繁體中文 | [English](/en/2019/08/15/why-I-like-git-rebase/)
 
-這篇文章是要分享我使用的原因與時機還有似乎很多人不知道的`git push --force-with-lease`。已經很多文章在講`git rebase`了，但很多都沒有提到應該要跟`git push --force-with-lease`一起使用，對我來說他們就是密不可分的。如果你重來沒用過`rebase`，[請服用](https://git-scm.com/docs/git-rebase)
+這篇文章是要分享我使用的原因與時機還有似乎很多人不知道的`git push --force-with-lease`。已經很多文章在講`git rebase`了，但很多都沒有提到應該要跟`git push --force-with-lease`一起使用。
+
+在開始之前，如果你重來沒用過`rebase`，[請服用](https://git-scm.com/docs/git-rebase)。
 
 ## 為什麼我愛用`git rebase`
 
@@ -80,7 +82,8 @@ pick 0967d97 feat: add E feature
 # These lines can be re-ordered; they are executed from top to bottom.
 ```
 
-你可以重新排列 commit 順序、修改 commit message、捨棄 commit 甚至融合 commit ......
+你可以重新排列 commit 順序、修改 commit message、捨棄 commit 甚至融合 commit 等等。
+我個人覺得這超好用。
 
 ## 小夥伴 `git push --force-with-lease`
 

@@ -2,7 +2,7 @@
 date: 2019-8-15
 tag:
   - Git
-summary: Don't use merge all the time. Let's talk about rebase. In my opinion, we should always use `git push --force-with-lease` with `git rebase`.
+summary: rebase is more intuitive and clean than merge. So stop always using merge to combine branches.
 ---
 
 # Why I like "`git rebase`"
@@ -22,8 +22,10 @@ Both `merge` and `rebase` can join two branches together, Let's take a look the 
 `merge` will put all commits of two branches together and sort them by commit time, It's just like Dragon Ball Fusion:
 ![Dragon Ball](@assets/rebase/dragon-ball.gif)
 
-`rebase` don't care about commit time. It keep every commit which comes from the same branch together. It's like the fusion in One Piece, even though the fusion is completed, I can still recognize each part 👍:
+`rebase` don't care about commit time. It keep every commit which comes from the same branch together. It's like the fusion in One Piece:
 ![One Piece](@assets/rebase/one-piece.gif)
+
+See the difference? Even though the fusion is completed, I can still recognize each part 👍.
 
 ### The way to solve conflicts
 
@@ -80,7 +82,7 @@ pick 0967d97 feat: add E feature
 # These lines can be re-ordered; they are executed from top to bottom.
 ```
 
-You're able to reorder, edit commit message, remove commit, or even meld some commits into a previous commit...
+You're able to reorder, edit commit message, remove commit, or even meld some commits into a previous commit, etc. Well, it's pretty handy,
 
 ## `git push --force-with-lease`
 

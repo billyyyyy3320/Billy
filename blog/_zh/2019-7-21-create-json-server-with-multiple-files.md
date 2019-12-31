@@ -1,7 +1,6 @@
 ---
 date: 2019-7-21
 tag:
-  - Frontend
   - JavaScript
 summary: 有了json-server前端可以繼續開發不依賴後端，但是只有單一json檔案入口，維護太麻煩了，不如把它依照ＡＰＩ拆分成多個獨立檔案，讓開發更順手。
 comment:

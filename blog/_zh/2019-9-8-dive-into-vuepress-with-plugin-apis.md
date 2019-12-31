@@ -4,7 +4,6 @@ date: 2019-9-8
 tag:
   - Vue
   - VuePress
-  - Frontend
   - JavaScript
 summary: 插件化是 Vuepress 1.x 的最大改變。這讓我突發奇想，如果我了解了所有plugin api的執行順序以及到底做了什麼，這會是個了解VuePress運作來龍去脈的特別途徑。
 comment:

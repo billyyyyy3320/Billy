@@ -22,10 +22,10 @@ comment:
 `merge`跟`rebase`都可以合併分支，那來看看他們的差別：
 
 `merge`會把兩個分支的 commits 一樣照時間排序摻在一塊，合併為一個分支，就像七龍珠合體，合體完都摻在一起了：
-![Dragon Ball](@assets/rebase/dragon-ball.gif)
+![Dragon Ball](@assets/20190815/dragon-ball.gif)
 
 `rebase`則是重定基底，兩個分支的 commits 時間我不管，但是同個分支內的 commits 都放在一起，就像海賊王合體一樣，就算合體完成我還是一看就知道是由什麼組成，因為來自哪裡都擺在一塊 👍：
-![One Piece](@assets/rebase/one-piece.gif)
+![One Piece](@assets/20190815/one-piece.gif)
 
 ### 解決衝突的方式
 
@@ -39,11 +39,11 @@ comment:
 
 稍微看一下差異，全都用`merge`：
 
-![merge history](@assets/rebase/merge.png)
+![merge history](@assets/20190815/merge.png)
 
 `rebase` + `merge`：
 
-![rebase history](@assets/rebase/rebase.png)
+![rebase history](@assets/20190815/rebase.png)
 
 ### 自由修改所有 commits
 

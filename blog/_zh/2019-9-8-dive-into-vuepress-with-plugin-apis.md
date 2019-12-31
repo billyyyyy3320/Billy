@@ -207,5 +207,5 @@ VP 利用[webpack-dev-server](https://github.com/webpack/webpack-dev-server)來�
 所以這個方法的確領著我穿梭了整個流程。縱使可能沒有掌握到所有概念，至少他幫我解決了到底要從哪開始的困擾。希望這篇文章能幫助你更了解 VP 或是讓你更輕鬆地去深入 source code。
 
 ::: slot diagram
-![VuePress lifecycle](@assets/vuepress/lifecycle.png)
+![VuePress lifecycle](@assets/20190908/lifecycle.png)
 :::

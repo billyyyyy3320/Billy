@@ -72,8 +72,8 @@ module.exports = (options, context, api) => {
             link: "https://github.com/newsbielt703"
           },
           {
-            type: "instagram",
-            link: "https://www.instagram.com/billyyyyy3320/"
+            type:"mail",
+            link:"mailto:newsbielt703@gmail.com"
           }
         ],
         copyright: [

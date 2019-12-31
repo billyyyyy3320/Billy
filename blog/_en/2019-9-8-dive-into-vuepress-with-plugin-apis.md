@@ -138,7 +138,7 @@ Note that you have to tell VP where's your source files, e.g. `vuepress hello do
 VP split out webpack config into three files: base, client and server. Kind of similar to what [Vue SSR Guide suggest](https://ssr.vuejs.org/guide/build-config.html#build-configuration). It'll invoke the function to create base config no matter it's creating client or server config.
 
 We only need to care client config in this section:
-![VuePress dev progress](@assets/vuepress/dev-progress.png)
+![VuePress dev progress](@assets/20190908/dev-progress.png)
 Let's take a look at the relevant options:
 
 - `define`
@@ -181,7 +181,7 @@ Source files and config are watched by [chokidar](https://github.com/paulmillr/c
 
 Unlike [Dev](#dev), in this section, we do care both client and server config:
 
-![VuePress build progress](@assets/vuepress/build-progress.png)
+![VuePress build progress](@assets/20190908/build-progress.png)
 
 Those options executed by creating client config are also executed by creating server config, so we're not going to discuss them again, you can take a look at [the previous section](#create-webpack-config).
 
@@ -206,5 +206,5 @@ When everything is done, VP run `generated`.✌️
 So, this approach really led me from beginning to end. Although it may not cover every concept, it saved me from thinking where should I start? Hope it can help you get clear about VP or feel more comfortable to dive into the source code.
 
 ::: slot diagram
-![VuePress lifecycle](@assets/vuepress/lifecycle.png)
+![VuePress lifecycle](@assets/20190908/lifecycle.png)
 :::

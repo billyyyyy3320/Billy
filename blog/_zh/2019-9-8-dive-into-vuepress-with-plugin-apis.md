@@ -140,7 +140,7 @@ VP 利用[CAC](https://github.com/cacjs/cac)來打造它的命令列介面。在
 VP 把 webpack 配置拆分成三個檔案：base、client、server。有點像是[Vue SSR Guide 的建議](https://ssr.vuejs.org/guide/build-config.html#build-configuration)。不論 VP 是在建立 client 或是 server 配置，它都會建立出 base 配置。
 
 在這段落我們只在乎 client 配置：
-![VuePress dev progress](@assets/vuepress/dev-progress.png)
+![VuePress dev progress](@assets/20190908/dev-progress.png)
 來看看對應的 API 吧：
 
 - `define`
@@ -182,7 +182,7 @@ VP 利用[webpack-dev-server](https://github.com/webpack/webpack-dev-server)來�
 
 這個段落跟[Dev](#dev)不同，不論 client 還是 server 的配置我們都在乎：
 
-![VuePress build progress](@assets/vuepress/build-progress.png)
+![VuePress build progress](@assets/20190908/build-progress.png)
 
 因為那些在 client 配置中被調用的 API 也都會在建立 server 配置中被調用，所以我們不會再討論一次，如果你有興趣可以回頭看[前面的段落](#建立-webpack-配置)。
 
@@ -207,5 +207,5 @@ VP 利用[webpack-dev-server](https://github.com/webpack/webpack-dev-server)來�
 所以這個方法的確領著我穿梭了整個流程。縱使可能沒有掌握到所有概念，至少他幫我解決了到底要從哪開始的困擾。希望這篇文章能幫助你更了解 VP 或是讓你更輕鬆地去深入 source code。
 
 ::: slot diagram
-![VuePress lifecycle](@assets/vuepress/lifecycle.png)
+![VuePress lifecycle](@assets/20190908/lifecycle.png)
 :::

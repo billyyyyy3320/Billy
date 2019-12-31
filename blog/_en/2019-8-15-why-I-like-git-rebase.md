@@ -20,10 +20,10 @@ I'm going to share the reason or timing I use `git rebase` and `git push --force
 Both `merge` and `rebase` can join two branches together, Let's take a look the difference：
 
 `merge` will put all commits of two branches together and sort them by commit time, It's just like Dragon Ball Fusion:
-![Dragon Ball](@assets/rebase/dragon-ball.gif)
+![Dragon Ball](@assets/20190815/dragon-ball.gif)
 
 `rebase` don't care about commit time. It keep every commit which comes from the same branch together. It's like the fusion in One Piece:
-![One Piece](@assets/rebase/one-piece.gif)
+![One Piece](@assets/20190815/one-piece.gif)
 
 See the difference? Even though the fusion is completed, I can still recognize each part 👍.
 
@@ -39,11 +39,11 @@ To be honest, I use them both. Merge commits help me track the merges. I usually
 
 Take a look at difference, only `merge`:
 
-![merge history](@assets/rebase/merge.png)
+![merge history](@assets/20190815/merge.png)
 
 `rebase` + `merge`:
 
-![rebase history](@assets/rebase/rebase.png)
+![rebase history](@assets/20190815/rebase.png)
 
 ### Feel free to edit commits
 

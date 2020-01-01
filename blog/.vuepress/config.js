@@ -48,8 +48,11 @@ module.exports = (options, context, api) => {
           clientId: "4119e8c1b0093fc5d034",
           clientSecret: "1ac1176791689b1ca31037c39489fc7b0667015d"
         };
+        const newsletter = {
+          endpoint: "https://gmail.us5.list-manage.com/subscribe/post?u=942c0d587f8ea28269e80d6cd&amp;id=d77d789d53"
+        }
         blogPluginOptions.directories = [...writingDirectoryClassifier];
-        return { ...blogPluginOptions, sitemap, comment };
+        return { ...blogPluginOptions, sitemap, comment, newsletter};
       },
       nav: [
         {

@@ -905,13 +905,14 @@
   dependencies:
     lodash.throttle "^4.1.1"
 
-"@vuepress/plugin-blog@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-blog/-/plugin-blog-1.7.1.tgz#42a543937140d23ab9db8733aad8d2cb5ab57b15"
-  integrity sha512-+P81RQuo4wIhxaI2VegF/XMChoChSvD01YSEqymGEY55P8bi5hDqQ0EJaRx0Uy2IXWwLb6aLjpmVMR1L7A1t+g==
+"@vuepress/plugin-blog@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-blog/-/plugin-blog-1.8.1.tgz#ab5f15621f61e3d214cc054b28a3b8ae9cd001ec"
+  integrity sha512-6LGNBesXt+FzTHLcd1FUcei54vL+q5/1OH8gvT4UnN2TArU5OO/EGqUi2xV0Buf3cUtgKlt18BDjbYSXvw41ZA==
   dependencies:
     "@vssue/api-github-v3" "^1.1.2"
     "@vssue/vuepress-plugin-vssue" "^1.2.0"
+    dayjs "^1.8.19"
     vuejs-paginate "^2.1.0"
     vuepress-plugin-disqus-comment "^0.2.3"
     vuepress-plugin-mailchimp "^1.4.1"
@@ -991,12 +992,12 @@
     semver "^6.0.0"
     upath "^1.1.0"
 
-"@vuepress/theme-blog@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/theme-blog/-/theme-blog-1.5.0.tgz#077f500a51ddb48b10148b30dba3c3075eb21791"
-  integrity sha512-Wd6ZVkOyEnAsqlKYl67Nvw5wGTpkeAOqjNhDkbZGvZ8Z54QeN/ud1UHEIaE6nHNfa4uHN11ssJG33kVOiBW2Pw==
+"@vuepress/theme-blog@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/theme-blog/-/theme-blog-1.6.0.tgz#eb121c13a5113a29732e1c428a680dae0fa3274e"
+  integrity sha512-RdnblwqA2Vi5RIpDSJ/VmzhXygYLbnJ2CtR5uHM4mYApSlQEC2lqXhW/TrbjcToUrNQIimUI+C34rPPUltHKRw==
   dependencies:
-    "@vuepress/plugin-blog" "^1.7.1"
+    "@vuepress/plugin-blog" "^1.8.1"
     "@vuepress/plugin-medium-zoom" "1.0.0"
     "@vuepress/plugin-nprogress" "1.0.0"
     "@vuepress/plugin-pwa" "1.0.0"
@@ -1004,6 +1005,7 @@
     dayjs "^1.8.19"
     remove-markdown "^0.3.0"
     vue-feather-icons "^4.21.0"
+    vuepress-plugin-smooth-scroll "^0.0.9"
 
 "@vuepress/theme-default@^1.0.2":
   version "1.0.2"
@@ -6399,6 +6401,11 @@ slash@^2.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
   integrity sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==
 
+smoothscroll-polyfill@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz#3a259131dc6930e6ca80003e1cb03b603b69abf8"
+  integrity sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -7377,6 +7384,13 @@ vuepress-plugin-sitemap@^2.3.1:
   integrity sha512-n+8lbukhrKrsI9H/EX0EBgkE1pn85LAQFvQ5dIvrZP4Kz6JxPOPPNTQmZMhahQV1tXbLZQCEN7A1WZH4x+arJQ==
   dependencies:
     sitemap "^3.0.0"
+
+vuepress-plugin-smooth-scroll@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-smooth-scroll/-/vuepress-plugin-smooth-scroll-0.0.9.tgz#6c5d01db60def3d7b976b53404e56b97da9e8f39"
+  integrity sha512-UXX+HLZO1NKVwyiOJlj0smh8F9dKnwybjEi7w/Mj9EYLhKrNYr5uXs+N+OTt8VwKCn3f0vZ1XAwFIjsPlD7GJA==
+  dependencies:
+    smoothscroll-polyfill "^0.4.4"
 
 vuepress@^1.0.0:
   version "1.0.2"

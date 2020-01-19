@@ -52,7 +52,8 @@ module.exports = (options, context, api) => {
           "https://gmail.us5.list-manage.com/subscribe/post?u=942c0d587f8ea28269e80d6cd&amp;id=d77d789d53"
       },
       feed: {
-        canonical_base: "https://billyyyyy3320.com/"
+        canonical_base: "https://billyyyyy3320.com/",
+        posts_directories: ["/_en/"]
       },
       nav: [
         {

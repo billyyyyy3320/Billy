@@ -48,7 +48,11 @@ module.exports = (options, context, api) => {
         clientSecret: "1ac1176791689b1ca31037c39489fc7b0667015d"
       },
       newsletter: {
-        endpoint: "https://gmail.us5.list-manage.com/subscribe/post?u=942c0d587f8ea28269e80d6cd&amp;id=d77d789d53"
+        endpoint:
+          "https://gmail.us5.list-manage.com/subscribe/post?u=942c0d587f8ea28269e80d6cd&amp;id=d77d789d53"
+      },
+      feed: {
+        canonical_base: "https://billyyyyy3320.com/"
       },
       nav: [
         {

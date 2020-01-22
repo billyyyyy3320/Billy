@@ -1,13 +1,12 @@
 ---
+title: 為什麼我愛用"git rebase"
 date: 2019-8-15
-tag:
+tags:
   - Git
 summary: rebase比merge更直觀更乾淨，別再只用merge來分別分支了。
 comment:
   title: Why I like "git rebase"
 ---
-
-# 為什麼我愛用`git rebase`
 
 繁體中文 | [English](/en/2019/08/15/why-I-like-git-rebase/)
 

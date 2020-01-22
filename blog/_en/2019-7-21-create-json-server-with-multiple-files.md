@@ -1,11 +1,10 @@
 ---
+title: Create json-server with multiple files
 date: 2019-7-21
-tag:
+tags:
   - JavaScript
 summary: With json-server, Frontend engineers can develop without relying on Backend. But it's not handy to maintain it due to its single .json file entry. Why not splitting each API into separate files.
 ---
-
-# Create `json-server` with multiple files
 
 [繁體中文](/zh/2019/07/21/create-json-server-with-multiple-files/) | English
 

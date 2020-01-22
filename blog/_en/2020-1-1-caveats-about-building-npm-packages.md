@@ -1,12 +1,11 @@
 ---
+title: Caveats about building npm packages
 date: 2020-1-1
-tag:
+tags:
   - Npm
   - JavaScript
 summary: The dump things I've done when I was building npm packages
 ---
-
-# Caveats about building npm packages
 
 [繁體中文](/zh/2020/01/01/caveats-about-building-npm-packages/) | English
 

@@ -1,14 +1,13 @@
 ---
+title: 創建 npm package 的注意事項
 date: 2020-1-1
-tag:
+tags:
   - Npm
   - JavaScript
 summary: 我在製作npm package時犯的錯
 comment:
   title: Caveats about building npm packages
 ---
-
-# 創建 npm package 的注意事項
 
 繁體中文 | [English](/en/2020/01/01/caveats-about-building-npm-packages/)
 

@@ -1,13 +1,12 @@
 ---
+title: 打造多檔案結構的json-server
 date: 2019-7-21
-tag:
+tags:
   - JavaScript
 summary: 有了json-server前端可以繼續開發不依賴後端，但是只有單一json檔案入口，維護太麻煩了，不如把它依照ＡＰＩ拆分成多個獨立檔案，讓開發更順手。
 comment:
   title: Create json-server with multiple files
 ---
-
-# 打造多檔案結構的`json-server`
 
 繁體中文 | [English](/en/2019/07/21/create-json-server-with-multiple-files/)
 

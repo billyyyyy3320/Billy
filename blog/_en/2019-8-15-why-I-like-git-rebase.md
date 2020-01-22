@@ -1,11 +1,10 @@
 ---
+title: Why I like "git rebase"
 date: 2019-8-15
-tag:
+tags:
   - Git
 summary: rebase is more intuitive and clean than merge. So stop always using merge to combine branches.
 ---
-
-# Why I like "`git rebase`"
 
 [繁體中文](/zh/2019/08/15/why-I-like-git-rebase/) | English
 

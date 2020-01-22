@@ -1,7 +1,8 @@
 ---
+title: 透過插件 API 來深入了解 VuePress
 layout: PostWithDiagram
 date: 2019-9-8
-tag:
+tags:
   - Vue
   - VuePress
   - JavaScript
@@ -9,8 +10,6 @@ summary: 插件化是 Vuepress 1.x 的最大改變。這讓我突發奇想，如
 comment:
   title: Dive into VuePress with Plugin APIs
 ---
-
-# 透過插件 API 來深入了解 VuePress
 
 繁體中文 | [English](/en/2019/09/08/dive-into-vuepress-with-plugin-apis/)
 

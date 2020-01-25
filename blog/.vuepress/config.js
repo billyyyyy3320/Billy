@@ -18,21 +18,13 @@ module.exports = (options, context, api) => {
           id: "zh",
           dirname: "_zh",
           path: "/zh/",
-          itemLayout: "Post",
-          itemPermalink: "/zh/:year/:month/:day/:slug",
-          pagination: {
-            lengthPerPage: 5
-          }
+          itemPermalink: "/zh/:year/:month/:day/:slug"
         },
         {
           id: "en",
           dirname: "_en",
           path: "/en/",
-          itemLayout: "Post",
-          itemPermalink: "/en/:year/:month/:day/:slug",
-          pagination: {
-            lengthPerPage: 5
-          }
+          itemPermalink: "/en/:year/:month/:day/:slug"
         }
       ],
       sitemap: {

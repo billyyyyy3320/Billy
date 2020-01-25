@@ -1,7 +1,7 @@
 ---
 title: Dive into VuePress with Plugin APIs
 layout: PostWithDiagram
-date: 2019-9-8
+date: 2019-09-08
 tags:
   - Vue
   - VuePress

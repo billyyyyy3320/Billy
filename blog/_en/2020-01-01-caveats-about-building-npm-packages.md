@@ -1,6 +1,6 @@
 ---
 title: Caveats about building npm packages
-date: 2020-1-1
+date: 2020-01-01
 tags:
   - Npm
   - JavaScript

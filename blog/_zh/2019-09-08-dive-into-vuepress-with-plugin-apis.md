@@ -1,7 +1,7 @@
 ---
 title: 透過插件 API 來深入了解 VuePress
 layout: PostWithDiagram
-date: 2019-9-8
+date: 2019-09-08
 tags:
   - Vue
   - VuePress

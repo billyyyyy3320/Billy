@@ -1,6 +1,6 @@
 ---
 title: 創建 npm package 的注意事項
-date: 2020-1-1
+date: 2020-01-01
 tags:
   - Npm
   - JavaScript

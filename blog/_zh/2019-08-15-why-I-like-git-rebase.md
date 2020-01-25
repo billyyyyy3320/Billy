@@ -1,56 +1,56 @@
 ---
-title: Why I like "git rebase"
-date: 2019-8-15
+title: 為什麼我愛用"git rebase"
+date: 2019-08-15
 tags:
   - Git
-summary: rebase is more intuitive and clean than merge. So stop always using merge to combine branches.
+summary: rebase比merge更直觀更乾淨，別再只用merge來分別分支了。
+comment:
+  title: Why I like "git rebase"
 ---
 
-[繁體中文](/zh/2019/08/15/why-I-like-git-rebase/) | English
+繁體中文 | [English](/en/2019/08/15/why-I-like-git-rebase/)
 
-Please take a look at [documentation](https://git-scm.com/docs/git-rebase) if you've never used `git rebase` before.
+這篇文章是要分享我使用的原因與時機還有似乎很多人不知道的`git push --force-with-lease`。已經很多文章在講`git rebase`了，但很多都沒有提到應該要跟`git push --force-with-lease`一起使用。
 
-I'm going to share the reason or timing I use `git rebase` and `git push --force-with-lease`. I feel like there's still many people don't know there's a useful stuff `git push --force-with-lease`. In my opinion, we should always use `git push --force-with-lease` with `git rebase`.
+在開始之前，如果你重來沒用過`rebase`，[請服用](https://git-scm.com/docs/git-rebase)。
 
-## Why I like `git rebase`
+## 為什麼我愛用`git rebase`
 
-### Commit history is clear and straightforward
+### 專案的歷史非常整潔直觀
 
-Both `merge` and `rebase` can join two branches together, Let's take a look the difference：
+`merge`跟`rebase`都可以合併分支，那來看看他們的差別：
 
-`merge` will put all commits of two branches together and sort them by commit time, It's just like Dragon Ball Fusion:
+`merge`會把兩個分支的 commits 一樣照時間排序摻在一塊，合併為一個分支，就像七龍珠合體，合體完都摻在一起了：
 ![Dragon Ball](@assets/20190815/dragon-ball.gif)
 
-`rebase` don't care about commit time. It keep every commit which comes from the same branch together. It's like the fusion in One Piece:
+`rebase`則是重定基底，兩個分支的 commits 時間我不管，但是同個分支內的 commits 都放在一起，就像海賊王合體一樣，就算合體完成我還是一看就知道是由什麼組成，因為來自哪裡都擺在一塊 👍：
 ![One Piece](@assets/20190815/one-piece.gif)
 
-See the difference? Even though the fusion is completed, I can still recognize each part 👍.
+### 解決衝突的方式
 
-### The way to solve conflicts
+`merge`會產生一個 merge commit，沒有衝突的情況可以 [fast-forward](https://git-scm.com/docs/git-merge#_fast_forward_merge)，但遇到衝突，就一定得要提交一個 commit 來解決衝突。
 
-`merge` has to generate a merge commit, maybe it can be [fast-forward](https://git-scm.com/docs/git-merge#_fast_forward_merge), but when there're conflicts, you have to solve it and commit your changes.
+而`rebase`不會產生任何多餘的 commit 👍。
 
-On the other hand, `rebase` won't generate any lengthy commit 👍.
+`rebase`實際上像是重定完基底後，把 commit 一個個重新提交，而遇到衝突就停下讓你解決，這樣的解衝突方法我個人滿喜歡的，一步一步的解思緒比較清楚，方便釐清當前正在做什麼，要留什麼，不留什麼。但是也有壞處，當衝突過多，要解很久，很繁瑣。
 
-`rebase` is actually like rebuilding the base and submit all the commits again. Whenever meeting conflicts, it'll stop to let you solve it. I personally prefer this approach since it's more clear to figure out which changes I want to keep or drop. But it's not really handy when there's a lot of commits and they all meet conflicts.
+實際上我兩個都還是會用到，merge commit 可以幫助追蹤。所以我會在自己工作的分支上總是使用`rebase`來解衝突，而當要把分支併入主分支時使用`merge`。
 
-To be honest, I use them both. Merge commits help me track the merges. I usually use `rebase` to solve conflicts in my feature branch and only use `merge` when I'm going to merge a feature branch to master.
-
-Take a look at difference, only `merge`:
+稍微看一下差異，全都用`merge`：
 
 ![merge history](@assets/20190815/merge.png)
 
-`rebase` + `merge`:
+`rebase` + `merge`：
 
 ![rebase history](@assets/20190815/rebase.png)
 
-### Feel free to edit commits
+### 自由修改所有 commits
 
-It's no longer to do with joining branches together, I've mentioned something like `submit all the commits again`, since it's going to commit again, of course you can edit the commits.
+這就跟合併分支無關，上面提到`rebase`把 commit 一個個重新提交，那既然可以重新提交，當然也可重新修改 commit 內容吧：
 
 [git rebase -i](https://git-scm.com/docs/git-rebase#_interactive_mode)
 
-It'll probably show something like below:
+大概會顯示以下這種畫面：
 
 ```
 pick 30e43f8 docs: update Readme
@@ -81,19 +81,20 @@ pick 0967d97 feat: add E feature
 # These lines can be re-ordered; they are executed from top to bottom.
 ```
 
-You're able to reorder, edit commit message, remove commit, or even meld some commits into a previous commit, etc. Well, it's pretty handy,
+你可以重新排列 commit 順序、修改 commit message、捨棄 commit 甚至融合 commit 等等。
+我個人覺得這超好用。
 
-## `git push --force-with-lease`
+## 小夥伴 `git push --force-with-lease`
 
-### Usage
+### 作用
 
-`rebase` is really useful, but it means you change the history. We don't care about that if the branch is just a local branch. But if you have pushed it to the remote repository, you have to run `git push -f` which is very dangerous.
+`rebase` 非常好用但是有它的副作用，rebase 代表修改了歷史，如果只在本地沒有影響，但如果有推到遠端分支，這代表你得`git push -f`，但全世界都知道`git push -f`多危險。
 
-Thus, I always use `git push --force-with-lease`.
+所以我只用`git push --force-with-lease`，它會去檢查遠端分支是否有其他人做新的提交，如果不如它預期就會拒絕你 push。
 
 > This option allows you to say that you expect the history you are updating is what you rebased and want to replace. If the remote ref still points at the commit you specified, you can be sure that no other people did anything to the ref.
 
-If the history isn't what we expected:
+被拒絕如下：
 
 ```shell
 git push origin master --force-with-lease
@@ -102,9 +103,9 @@ To github.com:newsbielt703/test-git-push--force-with-lease.git
 error: failed to push some refs to 'git@github.com:newsbielt703/test-git-push--force-with-lease.git'
 ```
 
-### Bad things happened
+### 出事了怎麼辦
 
-What if you screw up, maybe you have just run `git push -f` and someone lost his/her work? No worries. I found something interesting - [git-blame-someone-else](https:/github.com/jayphelps/git-blame-someone-else). Install it and run `git blame-someone-else "yourteammate <yourteamate@gmail.com>" <commit>`. See what happen below, it's no longer your fault:
+如果你搞砸了，傻傻地用了`git push -f`出事了怎麼辦，有個好用的東西[git-blame-someone-else](https://github.com/jayphelps/git-blame-someone-else)，安裝完後，照著 Readme 指示執行`git blame-someone-else "yourteammate <yourteamate@gmail.com>" <commit>`，再看看`git log`，不是你的錯了：
 
 ```
 commit 70f45487814217d0226f7eae8d0caa0734775353 (HEAD -> master, origin/master)
@@ -150,9 +151,9 @@ Date:   Thu Aug 15 20:37:19 2019 +0800
     feat: init
 ```
 
-It's just joking, please don't do that!<br/>
-It's just joking, please don't do that!<br/>
-It's just joking, please don't do that!
+這段是玩笑，別真的用啊!<br/>
+這段是玩笑，別真的用啊!<br/>
+這段是玩笑，別真的用啊!
 
 > This changes not only who authored the commit but the listed commiter as well. It also is something I wrote as a joke, so please don't run this against your production repo and complain if this script deletes everything.
 

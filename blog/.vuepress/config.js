@@ -17,12 +17,14 @@ module.exports = (options, context, api) => {
         {
           id: "zh",
           dirname: "_zh",
+          title: "貼文",
           path: "/zh/",
           itemPermalink: "/zh/:year/:month/:day/:slug"
         },
         {
           id: "en",
           dirname: "_en",
+          title: "Post",
           path: "/en/",
           itemPermalink: "/en/:year/:month/:day/:slug"
         }

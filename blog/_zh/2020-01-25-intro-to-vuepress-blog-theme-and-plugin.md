@@ -322,5 +322,3 @@ Email 訂閱，結合[mailchimp](https://mailchimp.com/)，並且如同留言一
 - [@vuepress/theme-blog](https://github.com/vuepressjs/vuepress-theme-blog)
 - [@vuepress/plugin-blog](https://github.com/vuepressjs/vuepress-plugin-blog)
 - [VuePress](https://github.com/vuejs/vuepress)
-
-Btw, 我正在尋找工作機會，請聯繫我： [newsbielt703@gmail.com](mailto:newsbielt703@gmail.com)

@@ -323,5 +323,3 @@ Feel free to open an issue about anything that you think can be better so that w
 - [@vuepress/theme-blog](https://github.com/vuepressjs/vuepress-theme-blog)
 - [@vuepress/plugin-blog](https://github.com/vuepressjs/vuepress-plugin-blog)
 - [VuePress](https://github.com/vuejs/vuepress)
-
-Btw, I'm open to job opportunities, please contact me: [newsbielt703@gmail.com](mailto:newsbielt703@gmail.com)

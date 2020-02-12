@@ -993,10 +993,10 @@
     semver "^6.0.0"
     upath "^1.1.0"
 
-"@vuepress/theme-blog@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@vuepress/theme-blog/-/theme-blog-2.0.3.tgz#faf99d58329fc1eada6b987883a8f8048c2cc5aa"
-  integrity sha512-fRv0x+PzoT1vmVulOLuTznB/ofaCZS91x51AHyrDo95e0Q33x1ACGzHan9wHo5yplZbNU10zXQh5/uZUhfzT+g==
+"@vuepress/theme-blog@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/theme-blog/-/theme-blog-2.1.0.tgz#f73a3c7676b048f47b938fd82acda931ecb060da"
+  integrity sha512-WU3vfSiRdZU91QnP431cajAVccapo/nOlSzb+c8WqgAQ3bmdaxn+BZPJ2O+oUi3NHRQjVA3ej2p9GVCIM/K3eg==
   dependencies:
     "@vuepress/plugin-blog" "^1.9.2"
     "@vuepress/plugin-medium-zoom" "1.0.0"

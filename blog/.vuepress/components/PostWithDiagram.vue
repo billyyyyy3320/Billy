@@ -5,7 +5,7 @@
       v-on:before-enter="beforeEnter"
       v-on:before-leave="beforeLeave"
     >
-      <Content slot-key="diagram" v-if="isOpen" />
+      <Content slot-key="diagram" v-show="isOpen" />
     </transition>
     <div class="diagram-controller">
       <Switches v-model="isOpen" theme="custom" color="default" type-bold="true" />

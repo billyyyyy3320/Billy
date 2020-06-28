@@ -12,7 +12,7 @@ comment:
 
 ## 前言
 
-先附上[範例](https://github.com/newsbielt703/json-server-mulitple-files-sample)
+先附上[範例](https://github.com/billyyyyy3320/json-server-mulitple-files-sample)
 
 這篇文章只是分享我自己運用的方法，或許有更好的 Best practice 也說不定。
 

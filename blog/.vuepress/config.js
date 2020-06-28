@@ -60,14 +60,14 @@ module.exports = (options, context, api) => {
         },
         {
           text: "Github",
-          link: "https://github.com/newsbielt703"
+          link: "https://github.com/billyyyyy3320"
         }
       ],
       footer: {
         contact: [
           {
             type: "github",
-            link: "https://github.com/newsbielt703"
+            link: "https://github.com/billyyyyy3320"
           },
           {
             type: "mail",

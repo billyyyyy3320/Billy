@@ -37,10 +37,10 @@ comment:
 
 ### 快速開始
 
-我知道從頭建起一個專案總是很麻煩無聊，尤其是對於一個新接觸的技術。VuePress Core Team 內已經針對這點做討論，會盡快提供官方腳手架 Cli。在這篇文章裡，你可以暫時先使用我事先準備好的[template](https://github.com/newsbielt703/vuepress-blog-template)。
+我知道從頭建起一個專案總是很麻煩無聊，尤其是對於一個新接觸的技術。VuePress Core Team 內已經針對這點做討論，會盡快提供官方腳手架 Cli。在這篇文章裡，你可以暫時先使用我事先準備好的[template](https://github.com/billyyyyy3320/vuepress-blog-template)。
 
 ```sh
-git clone https://github.com/newsbielt703/vuepress-blog-template.git # Clone template
+git clone https://github.com/billyyyyy3320/vuepress-blog-template.git # Clone template
 
 cd vuepress-blog-template && yarn # 安裝依賴
 

@@ -10,7 +10,7 @@ summary: With json-server, Frontend engineers can develop without relying on Bac
 
 ## Intro
 
-[You can find a template here.](https://github.com/newsbielt703/json-server-mulitple-files-sample)
+[You can find a template here.](https://github.com/billyyyyy3320/json-server-mulitple-files-sample)
 
 I'm going to share how I work with `json-server`, but perhaps there's another way you work more comfortable.
 

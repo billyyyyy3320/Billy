@@ -35,10 +35,10 @@ Well, actually, my blog what you're watching now is a demo. Just navigate around
 
 ### Quick start
 
-I know that it's always been tough to set up a new project from scratch, especially with a new technology. We've started discussing it in VuePress Core Team, and will provide an official scaffolding tool ASAP. You can temporarily use my [template](https://github.com/newsbielt703/vuepress-blog-template) in this article.
+I know that it's always been tough to set up a new project from scratch, especially with a new technology. We've started discussing it in VuePress Core Team, and will provide an official scaffolding tool ASAP. You can temporarily use my [template](https://github.com/billyyyyy3320/vuepress-blog-template) in this article.
 
 ```sh
-git clone https://github.com/newsbielt703/vuepress-blog-template.git # Clone template
+git clone https://github.com/billyyyyy3320/vuepress-blog-template.git # Clone template
 
 cd vuepress-blog-template && yarn # Install dependencies
 

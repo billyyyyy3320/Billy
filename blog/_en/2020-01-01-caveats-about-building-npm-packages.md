@@ -13,7 +13,7 @@ Let's review the dumb things I've done when I was building npm packages. Here're
 
 ## Duplicate npm package
 
-It's the dump thing happened when I was writing [vuepress-plugin-disqus-comment](https://github.com/newsbielt703/vuepress-plugin-disqus-comment). The plugin name could've been `vuepress-plugin-disqus`. I pressed down `yarn publish` jovially when I finished. But looked at my terminal:
+It's the dump thing happened when I was writing [vuepress-plugin-disqus-comment](https://github.com/billyyyyy3320/vuepress-plugin-disqus-comment). The plugin name could've been `vuepress-plugin-disqus`. I pressed down `yarn publish` jovially when I finished. But looked at my terminal:
 
 `error Couldn't publish package: "https://registry.yarnpkg.com/vuepress-plugin-disqus: You do not have permission to publish \"vuepress-plugin-disqus\". Are you logged in as the correct user?"`
 

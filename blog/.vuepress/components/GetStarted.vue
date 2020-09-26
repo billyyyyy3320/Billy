@@ -1,6 +1,6 @@
 <template>
   <div class="start">
-    <router-link to="/en/">Get Started~</router-link>
+    <router-link to="/zh/">進入網站~</router-link>
   </div>
 </template>
 

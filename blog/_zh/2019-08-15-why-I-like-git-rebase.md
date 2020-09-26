@@ -1,162 +1,56 @@
 ---
-title: 為什麼我愛用"git rebase"
+title: 蘋果
 date: 2019-08-15
-tags:
-  - Git
-summary: rebase比merge更直觀更乾淨，別再只用merge來分別分支了。
-comment:
-  title: Why I like "git rebase"
 ---
 
-繁體中文 | [English](/en/2019/08/15/why-I-like-git-rebase/)
+![蘋果](https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80)
 
-這篇文章是要分享我使用的原因與時機還有似乎很多人不知道的`git push --force-with-lease`。已經很多文章在講`git rebase`了，但很多都沒有提到應該要跟`git push --force-with-lease`一起使用。
+蘋果，屬於薔薇科大宗水果，不僅是中國最主要的果品，也是世界上種植最廣、產量最多的果品。其味道酸甜適口，營養豐富。據測定，每百克蘋果含果糖6.5至11.2克，葡萄糖2.5至3.5克，蔗糖1.0至5.2克；還含有微量元素鋅、鈣、磷、鐵、鉀及維他命B1、維他命B2、維他命C和胡蘿蔔素等。而且蘋果所含的營養既全面又易被人體消化吸收，所以，非常適合各類人群食用。蘋果顏色可以預示保健功效。譬如：
 
-在開始之前，如果你重來沒用過`rebase`，[請服用](https://git-scm.com/docs/git-rebase)。
+紅蘋果
+很多國家的醫學理論認為，紅蘋果更有益心臟，提高記憶力，保持泌尿系統的健康。而中醫的角度是認為紅蘋果能降低血脂、軟化血管的作用更強，可保護心腦血管健康，老年人可以多吃一些。
 
-## 為什麼我愛用`git rebase`
+青蘋果
+很多國家的醫學理論認為，青蘋果更利於牙齒和骨骼強壯。而中醫認為青蘋果具有養肝解毒的功效，並能對抗抑鬱症，因此較適合年輕人食用。此外，中醫也認同青蘋果還可促進牙齒和骨骼生長，防止牙床出血。
 
-### 專案的歷史非常整潔直觀
+黃蘋果
+很多國家的醫學理論認為，可強健人體免疫系統，對預防某些癌症也有好處。中醫認為黃蘋果對保護視力有很好的作用，經常使用電腦的上班族可適當進食。
 
-`merge`跟`rebase`都可以合併分支，那來看看他們的差別：
+很多人都說過，「一天吃一個蘋果，醫生遠離你」。在十種對健康最有利的水果排名，蘋果占第一位。這是什麼呢？以下為你一一介紹。
 
-`merge`會把兩個分支的 commits 一樣照時間排序摻在一塊，合併為一個分支，就像七龍珠合體，合體完都摻在一起了：
-![Dragon Ball](@assets/20190815/dragon-ball.gif)
+1. 神奇的「蘋果酚」
+蘋果中含有多酚類， 極易在水中溶解，因而易被人體所吸收。優質紅富士所含的「蘋果酚」比普通蘋果高10%至20%。這種神奇的「蘋果酚」具有七種功效：
 
-`rebase`則是重定基底，兩個分支的 commits 時間我不管，但是同個分支內的 commits 都放在一起，就像海賊王合體一樣，就算合體完成我還是一看就知道是由什麼組成，因為來自哪裡都擺在一塊 👍：
-![One Piece](@assets/20190815/one-piece.gif)
+a. 抗氧化作用，可保持食物新鮮；
 
-### 解決衝突的方式
+b. 消除異味，可去魚腥、口臭；
 
-`merge`會產生一個 merge commit，沒有衝突的情況可以 [fast-forward](https://git-scm.com/docs/git-merge#_fast_forward_merge)，但遇到衝突，就一定得要提交一個 commit 來解決衝突。
+c. 預防蛀牙；
 
-而`rebase`不會產生任何多餘的 commit 👍。
+d. 能抑制黑色素、酵素的產生；
 
-`rebase`實際上像是重定完基底後，把 commit 一個個重新提交，而遇到衝突就停下讓你解決，這樣的解衝突方法我個人滿喜歡的，一步一步的解思緒比較清楚，方便釐清當前正在做什麼，要留什麼，不留什麼。但是也有壞處，當衝突過多，要解很久，很繁瑣。
+e. 能抑制活性氧發生，可預防因活性氧引起的各種生活習慣病；
 
-實際上我兩個都還是會用到，merge commit 可以幫助追蹤。所以我會在自己工作的分支上總是使用`rebase`來解衝突，而當要把分支併入主分支時使用`merge`。
+f. 能抑制血壓上升，預防高血壓；
 
-稍微看一下差異，全都用`merge`：
+g. 能抑制過敏反應，有一定的抗敏作用。
 
-![merge history](@assets/20190815/merge.png)
+2. 瘦身排毒
+富士蘋果中含有比一般蘋果更高的「果膠」，這是一種水溶性食物纖維，能夠減少腸內的不良細菌數量而有助有益細菌繁殖，從而腸內的細菌菌叢狀況。蘋果膠有瘦身排毒和降低膽固醇的功效。以前曾經風靡過的「蘋果減肥餐」，就是利用它能讓人有飽腹的感覺並具有整腸作用從而達到減輕體重的效果。現在，很多美國人都把蘋果作為瘦身必備，每周節食一天，只吃蘋果，號稱「蘋果日」。
+蘋果具有降低膽固醇含量的作用。法國科研人員經過試驗得出：吃蘋果可以減少血液中膽固醇含量，增加膽汁分泌和膽汁酸功能，因而可避免膽固醇沉澱在膽汁中形成膽結石。有人實驗發現，經常吃蘋果的人當中，有50%以上的人，其膽固醇含量比不吃蘋果的人低10%。
 
-`rebase` + `merge`：
+蘋果還具有通便和止瀉的雙重作用，因為蘋果中所含的纖維素能使大腸內的糞便變軟；蘋果含有豐富的有機酸，可刺激胃腸蠕動，促使大便通暢。另一方面蘋果中含有果膠，又能抑制腸道不正常的蠕動，使消化活動減慢，從而抑制輕度腹瀉。
 
-![rebase history](@assets/20190815/rebase.png)
+3. 美容養顏
+富士蘋果中含有豐富的維他命。在所有含有維他命C的水果中，以蘋果的含量最高 — 大約100g富士蘋果中就含有10mg維他命C。那麼維他命C有什麼作用呢？其實，維他命C可以有效抑制皮膚黑色素和形成，幫助消除皮膚色斑，增加血紅素，延緩皮膚衰老。美國的研究人員還證明：「從新鮮的水果中直接攝取維他命C要比口服藥劑更為有效」。每天吃一個紅富士，就可以滿足人體每日所需的大部分維他命C。
 
-### 自由修改所有 commits
+4. 減壓補氧
+現代人在平常飲食中攝入蛋白質過多，這些蛋白質分解成氨基酸，從而造成大多數人的體液都呈「酸性」。酸性體液就會不斷在體內堆積，容易使人感到疲勞乏力。水果中就數蘋果含有的營養最為齊全，其中的多糖、鉀離子、果膠、酒石酸、枸櫞酸等，可以中和酸性體液中的酸根，降低體液中的酸性，從而緩解疲勞。蘋果有「智慧果」、「記憶果」的美稱。人們早就發現，多吃蘋果有增進記憶、提高智慧的效果。蘋果不僅含有豐富的糖、維他命和礦物質等大腦必需的營養素，而且更重要的是富含鋅元素。
 
-這就跟合併分支無關，上面提到`rebase`把 commit 一個個重新提交，那既然可以重新提交，當然也可重新修改 commit 內容吧：
+據研究，鋅是人體內許多重要酶的組成部分，是促進生長發育的關鍵元素。鋅通過酶廣泛參與體內蛋白質、脂肪和糖的代謝。鋅還是構成與記憶力息息相關的核酸與蛋白質的必不可少的元素。缺鋅可使大腦皮層邊緣部海馬區發育不良，影響記憶力，實驗也證明，減少食物中的鋅，幼童的記憶力和學習能力受到嚴重障礙。鋅還與產生抗體、提高人體免疫力等有密切關係。
 
-[git rebase -i](https://git-scm.com/docs/git-rebase#_interactive_mode)
+5. 康體防癌
+芬蘭的研究工作者1999年10月發表的一項研究報告表明 — 蘋果中所含的黃酮類化合物是降低癌症發病率的有效物質。經常食用蘋果的人們，肺癌的患病率降低46%，患其他癌症的幾率也比一般人少20%。一項由紐約蘋果研究發展工程及紐約蘋果協會贊助的科研成果也表明，每天吃一個蘋果可以有效預防癌症。
 
-大概會顯示以下這種畫面：
-
-```
-pick 30e43f8 docs: update Readme
-pick 4103b7e feat: add Z feature
-pick b962eeb feat: add A feature
-pick f296540 feat: add B feature
-pick a49b581 feat: add D feature
-pick 0967d97 feat: add E feature
-
-# Rebase dc2a5e0..0967d97 onto dc2a5e0 (6 commands)
-#
-# Commands:
-# p, pick <commit> = use commit
-# r, reword <commit> = use commit, but edit the commit message
-# e, edit <commit> = use commit, but stop for amending
-# s, squash <commit> = use commit, but meld into previous commit
-# f, fixup <commit> = like "squash", but discard this commit's log message
-# x, exec <command> = run command (the rest of the line) using shell
-# b, break = stop here (continue rebase later with 'git rebase --continue')
-# d, drop <commit> = remove commit
-# l, label <label> = label current HEAD with a name
-# t, reset <label> = reset HEAD to a label
-# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-# .       create a merge commit using the original merge commit's
-# .       message (or the oneline, if no original merge commit was
-# .       specified). Use -c <commit> to reword the commit message.
-#
-# These lines can be re-ordered; they are executed from top to bottom.
-```
-
-你可以重新排列 commit 順序、修改 commit message、捨棄 commit 甚至融合 commit 等等。
-我個人覺得這超好用。
-
-## 小夥伴 `git push --force-with-lease`
-
-### 作用
-
-`rebase` 非常好用但是有它的副作用，rebase 代表修改了歷史，如果只在本地沒有影響，但如果有推到遠端分支，這代表你得`git push -f`，但全世界都知道`git push -f`多危險。
-
-所以我只用`git push --force-with-lease`，它會去檢查遠端分支是否有其他人做新的提交，如果不如它預期就會拒絕你 push。
-
-> This option allows you to say that you expect the history you are updating is what you rebased and want to replace. If the remote ref still points at the commit you specified, you can be sure that no other people did anything to the ref.
-
-被拒絕如下：
-
-```shell
-git push origin master --force-with-lease
-To github.com:newsbielt703/test-git-push--force-with-lease.git
- ! [rejected]        master -> master (stale info)
-error: failed to push some refs to 'git@github.com:newsbielt703/test-git-push--force-with-lease.git'
-```
-
-### 出事了怎麼辦
-
-如果你搞砸了，傻傻地用了`git push -f`出事了怎麼辦，有個好用的東西[git-blame-someone-else](https://github.com/jayphelps/git-blame-someone-else)，安裝完後，照著 Readme 指示執行`git blame-someone-else "yourteammate <yourteamate@gmail.com>" <commit>`，再看看`git log`，不是你的錯了：
-
-```
-commit 70f45487814217d0226f7eae8d0caa0734775353 (HEAD -> master, origin/master)
-Author: yourteammate <yourteammate@gmail.com>
-Date:   Thu Aug 15 20:57:00 2019 +0800
-
-    feat: add E feature
-
-commit a202ae4447adebe5bfe3e73e678665a8bfdf6f0f
-Author: yourteammate <yourteammate@gmail.com>
-Date:   Thu Aug 15 20:56:43 2019 +0800
-
-    feat: add D feature
-
-commit be908366c98052077d893dedc28baf92dffacb71
-Author: yourteammate <yourteammate@gmail.com>
-Date:   Thu Aug 15 20:41:02 2019 +0800
-
-    feat: add B feature
-
-commit 10e6a57d3061abc55798f815a790bba6307039e5
-Author: yourteammate <yourteammate@gmail.com>
-Date:   Thu Aug 15 20:40:47 2019 +0800
-
-    feat: add A feature
-
-commit 4103b7ed93993635b2b7ac35ec2ceab79a7d6446
-Author: Billyyyyy3320 <newsbielt703@gmail.com>
-Date:   Thu Aug 15 20:52:04 2019 +0800
-
-    feat: add Z feature
-
-commit 30e43f858ef692b26380cceda5a84ac8a6c6e3d5
-Author: Billyyyyy3320 <newsbielt703@gmail.com>
-Date:   Thu Aug 15 20:47:59 2019 +0800
-
-    docs: update Readme
-
-commit dc2a5e0c60991925dd7fa4858ff367534000b380
-Author: Billyyyyy3320 <newsbielt703@gmail.com>
-Date:   Thu Aug 15 20:37:19 2019 +0800
-
-    feat: init
-```
-
-這段是玩笑，別真的用啊!<br/>
-這段是玩笑，別真的用啊!<br/>
-這段是玩笑，別真的用啊!
-
-> This changes not only who authored the commit but the listed commiter as well. It also is something I wrote as a joke, so please don't run this against your production repo and complain if this script deletes everything.
-
----
-
-End.
+6. 「全科醫生」
+早在古埃及，人們就不只把蘋果當成一種食品，更把它當作一種藥材。加拿大人的研究表明，在試管中蘋果汁有強大的殺滅傳染性病毒的作用，吃較多蘋果的人遠比不吃或少吃的人得感冒的機會要低。蘋果含有較多的鉀，與人體過剩的鈉鹽結合，使之排出體外。當人體攝入鈉鹽過多時，吃些蘋果，有利於平衡體內電解質。蘋果中含有的磷和鐵等元素，易被腸壁吸收，有補腦養血、甯神安眠作用。蘋果的香氣是治療抑鬱和壓抑感的良藥。專家們經過多次試驗發現，在諸多氣味中，蘋果的香氣對人的心理影響最大，它具有明顯的消除心理壓抑感的作用。臨床使用證明，讓精神壓抑患者嗅蘋果香氣後，心境大有好轉，精神輕鬆愉快，壓抑感消失。實驗還證明，失眠患者在入睡前嗅蘋果香味，能使人較快安靜入睡。用蘋果洗淨擠汁，每次服100毫升，每日3次，連續服用，15天為一療程，對高血壓患者有降低血壓的作用。所以，有的科學家和醫師把蘋果稱為「全方位的健康水果」或「全科醫生」。蘋果營養價值高，富含多種維他命和酸類物質。

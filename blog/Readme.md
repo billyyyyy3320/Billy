@@ -2,11 +2,13 @@
 title: About
 ---
 
-<h1 class="beginning"> Hi, I'm Billy </h1>
+<h1 class="beginning"> Hi, I'm Billy Chin</h1>
 
-I was born in 1997. I work as a frontend engineer. Developing is one of my habits. I make open source contributions and became a part of [VuePress](https://github.com/vuejs/vuepress) core team.
+I was born in 1997 and grew up in Taiwan (and still live here). My native language is Traditional Chinese. 
 
-I'm going to share some experiences here. It might help myself organize my thoughts and learn. I'm from Taiwan, so English is not my first language. Please don't hesitate to correct me if I'm wrong.
+As you can tell from my posts, I'm a software engineer. Currently, I work with [Appier](https://www.appier.com/). Besides, I make open source contributions and became a part of [VuePress](https://github.com/vuejs/vuepress) core team.
+
+There's NO material rewards by working on Open Source, but I did learn a lot from it as well as this blog.
 
 <GetStarted/>
 

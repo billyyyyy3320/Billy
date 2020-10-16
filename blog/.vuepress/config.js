@@ -51,7 +51,7 @@ module.exports = (options, context, api) => {
       },
       nav: [
         {
-          text: "貼文",
+          text: "部落格",
           link: "/zh/"
         },
         {

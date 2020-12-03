@@ -8,8 +8,6 @@ I was born in 1997 and grew up in Taiwan (and still live here). My native langua
 
 As you can tell from my posts, I'm a software engineer. Currently, I work with [Appier](https://www.appier.com/). Besides, I make open source contributions and became a part of [VuePress](https://github.com/vuejs/vuepress) core team.
 
-There's NO material rewards by working on Open Source, but I did learn a lot from it as well as this blog.
-
 <GetStarted/>
 
 <style lang="stylus" scoped>

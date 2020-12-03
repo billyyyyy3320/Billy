@@ -14,7 +14,7 @@ comment:
 
 先附上[範例](https://github.com/billyyyyy3320/json-server-mulitple-files-sample)
 
-這篇文章只是分享我自己運用的方法，或許有更好的 Best practice 也說不定。
+這篇文章只是分享我自己運用的方法，或許有更好的方法也說不定。
 
 ### `json-server` 能幹麻
 

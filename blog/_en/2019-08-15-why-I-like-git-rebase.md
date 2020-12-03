@@ -3,14 +3,14 @@ title: Why I like "git rebase"
 date: 2019-08-15
 tags:
   - Git
-summary: rebase is more intuitive and clean than merge. So stop always using merge to combine branches.
+summary: I guess when most of people getting started using `Git`, they always use `git merge` to integrate changes from another branch. But after I understood `rebase`, I can't stop loving it.
 ---
 
 [繁體中文](/zh/2019/08/15/why-I-like-git-rebase/) | English
 
-Please take a look at [documentation](https://git-scm.com/docs/git-rebase) if you've never used `git rebase` before.
+I guess when most of people getting started using `Git`, they always use `git merge` to integrate changes from another branch. But when I understand `rebase`, I can't stop loving it.
 
-I'm going to share the reason or timing I use `git rebase` and `git push --force-with-lease`. I feel like there's still many people don't know there's a useful stuff `git push --force-with-lease`. In my opinion, we should always use `git push --force-with-lease` with `git rebase`.
+Please take a look at [documentation](https://git-scm.com/docs/git-rebase) if you've never used `git rebase` before.
 
 ## Why I like `git rebase`
 
@@ -34,15 +34,25 @@ On the other hand, `rebase` won't generate any lengthy commit 👍.
 
 `rebase` is actually like rebuilding the base and submit all the commits again. Whenever meeting conflicts, it'll stop to let you solve it. I personally prefer this approach since it's more clear to figure out which changes I want to keep or drop. But it's not really handy when there's a lot of commits and they all meet conflicts.
 
-To be honest, I use them both. Merge commits help me track the merges. I usually use `rebase` to solve conflicts in my feature branch and only use `merge` when I'm going to merge a feature branch to master.
+Show me the diagram:
 
-Take a look at difference, only `merge`:
+- There's a `master` branch, and 2 branches based on `master` are developed simultaneously
 
-![merge history](@assets/20190815/merge.png)
+![Git flow diagram - init](@assets/20190815/git-init.png)
 
-`rebase` + `merge`:
+- `feat-a` is merged, trying to `merge` `feat-b`, but get conflicts
 
-![rebase history](@assets/20190815/rebase.png)
+![Git flow diagram - feat a merged](@assets/20190815/git-merge-feat-a.png)
+
+- Resolving conflicts by `merge`, the history might be something like below. Commits are messed, and there's an additional merge commit
+
+![Git flow diagram - feat b merged](@assets/20190815/git-merge-feat-b.png)
+
+- If resolving conflicts by `rebase`, it'll leave a straightforward history
+
+![Git flow diagram - feat b rebased](@assets/20190815/git-rebase.png)
+
+Don't you think the former one is ugly? If you don't, the reviewer might think so. By the latter one, reviewer can easily understand the scope the branch (PR) affects. But if it's messed, it cannot be reviewed by each commit.
 
 ### Feel free to edit commits
 

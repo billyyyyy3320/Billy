@@ -3,16 +3,18 @@ title: 為什麼我愛用"git rebase"
 date: 2019-08-15
 tags:
   - Git
-summary: rebase比merge更直觀更乾淨，別再只用merge來分別分支了。
+summary: 相信當大部分人剛接觸 `Git` 的人要合併 `branch` 時，一率都用 `git merge`。但是當我了解 `rebase` 後，一整個愛不釋手。
 comment:
   title: Why I like "git rebase"
 ---
 
 繁體中文 | [English](/en/2019/08/15/why-I-like-git-rebase/)
 
-這篇文章是要分享我使用的原因與時機還有似乎很多人不知道的`git push --force-with-lease`。已經很多文章在講`git rebase`了，但很多都沒有提到應該要跟`git push --force-with-lease`一起使用。
+## 背景
 
-在開始之前，如果你重來沒用過`rebase`，[請服用](https://git-scm.com/docs/git-rebase)。
+相信當大部分人剛接觸 `Git` 的人要合併 `branch` 時，一率都用 `git merge`。但是當我了解 `rebase` 後，一整個愛不釋手。
+
+阿我懶得講最基本指令用法，如果你重來沒用過`rebase`，[請服用](https://git-scm.com/docs/git-rebase)。
 
 ## 為什麼我愛用`git rebase`
 
@@ -34,15 +36,26 @@ comment:
 
 `rebase`實際上像是重定完基底後，把 commit 一個個重新提交，而遇到衝突就停下讓你解決，這樣的解衝突方法我個人滿喜歡的，一步一步的解思緒比較清楚，方便釐清當前正在做什麼，要留什麼，不留什麼。但是也有壞處，當衝突過多，要解很久，很繁瑣。
 
-實際上我兩個都還是會用到，merge commit 可以幫助追蹤。所以我會在自己工作的分支上總是使用`rebase`來解衝突，而當要把分支併入主分支時使用`merge`。
+Show me the diagram:
 
-稍微看一下差異，全都用`merge`：
+- 有個 Master branch，兩條基於 master 的分支，`feat-a` 和 `feat-b` 同時進行開發
 
-![merge history](@assets/20190815/merge.png)
+![Git flow diagram - init](@assets/20190815/git-init.png)
 
-`rebase` + `merge`：
+- Merge `feat-a` 後，要 merge `feat-b` 發現有 conflicts
 
-![rebase history](@assets/20190815/rebase.png)
+![Git flow diagram - feat a merged](@assets/20190815/git-merge-feat-a.png)
+
+- 用 merge 解決完 conflicts，很可能會變成以下狀況，都摻在一起了，而且多了一個 merge commit
+
+![Git flow diagram - feat b merged](@assets/20190815/git-merge-feat-b.png)
+
+- 但如果用 rebase 解決完 conflicts，會留下直觀的紀錄
+
+![Git flow diagram - feat b rebased](@assets/20190815/git-rebase.png)
+
+
+至於有什麼好處，不覺得摻在一起很難看嗎？如果你不覺得，reviewer 很可能會覺得，透過後者能夠清楚知道哪些 commits 是這個 branch (PR) 的影響範圍。如果是摻在一起，就無法從各個 commit 來進行 review。
 
 ### 自由修改所有 commits
 

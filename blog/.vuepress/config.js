@@ -70,13 +70,17 @@ module.exports = (options, context, api) => {
             link: "https://github.com/billyyyyy3320"
           },
           {
+            type: "linkedin",
+            link: "https://linkedin.com/in/billy-chin"
+          },
+          {
             type: "mail",
             link: "mailto:newsbielt703@gmail.com"
           }
         ],
         copyright: [
           {
-            text: "Billy Chin © 2019",
+            text: "© 2019 to present, Billy Chin",
             link: ""
           }
         ]

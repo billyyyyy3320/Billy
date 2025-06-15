@@ -25,8 +25,8 @@ module.exports = (options, context, api) => {
           id: "en",
           dirname: "_en",
           title: "Post",
-          path: "/en/",
-          itemPermalink: "/en/:year/:month/:day/:slug"
+          path: "/",
+          itemPermalink: "/:year/:month/:day/:slug"
         }
       ],
       sitemap: {
@@ -56,7 +56,7 @@ module.exports = (options, context, api) => {
         },
         {
           text: "Blog",
-          link: "/en/"
+          link: "/"
         },
         {
           text: "Github",
